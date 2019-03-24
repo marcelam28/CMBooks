@@ -1,0 +1,11 @@
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\CMBooks.Models.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\CMBooks.Models.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\obj\Debug\CMBooks.Models.csprojAssemblyReference.cache
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\obj\Debug\CMBooks.Models.csproj.CoreCompileInputs.cache
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\obj\Debug\CMBooks.Models.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\obj\Debug\CMBooks.Models.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\Deventure.Common.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Models\obj\Debug\CMBooks.Models.csproj.CopyComplete

@@ -1,0 +1,5 @@
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Common\bin\Debug\CMBooks.Common.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Common\bin\Debug\CMBooks.Common.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Common\obj\Debug\CMBooks.Common.csproj.CoreCompileInputs.cache
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Common\obj\Debug\CMBooks.Common.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\CMBooks.Common\obj\Debug\CMBooks.Common.pdb

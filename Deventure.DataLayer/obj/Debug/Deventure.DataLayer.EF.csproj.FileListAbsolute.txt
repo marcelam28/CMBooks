@@ -1,0 +1,17 @@
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\obj\Debug\Deventure.DataLayer.EF.csprojAssemblyReference.cache
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\obj\Debug\Deventure.DataLayer.EF.csproj.CoreCompileInputs.cache
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\Deventure.DataLayer.dll.config
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\Deventure.DataLayer.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\Deventure.DataLayer.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\LoggingService.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\NLog.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\LoggingService.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\NLog.xml
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\obj\Debug\Deventure.DataLayer.EF.csproj.CopyComplete
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\obj\Debug\Deventure.DataLayer.dll
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\obj\Debug\Deventure.DataLayer.pdb
+C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.DataLayer\bin\Debug\Deventure.Common.dll

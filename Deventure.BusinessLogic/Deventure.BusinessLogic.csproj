@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16B85C8D-AB4C-47A7-81B3-B16F0DA0DCA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Deventure.BusinessLogic</RootNamespace>
+    <AssemblyName>Deventure.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Deventure.Common, Version=1.0.6989.32994, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Deventure.Common.1.0.9\lib\Deventure.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BaseCore.cs" />
+    <Compile Include="Core\BaseSinglePkCore.cs" />
+    <Compile Include="Core\BaseSinglePkNameCore.cs" />
+    <Compile Include="Core\BaseSinglePkNameStatusCore.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\Linq\EntityFrameworkLinqExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\QueryableExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\IOHelper.cs" />
+    <Compile Include="Models\BaseEntityContainer.cs" />
+    <Compile Include="Pagination\BasePaginationConstants.cs" />
+    <Compile Include="Pagination\BasePaginationModel.cs" />
+    <Compile Include="Pagination\BasePaginationResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RepoService.cs" />
+    <Compile Include="TypeManagement\DataAdapterExtensions.cs" />
+    <Compile Include="Workflow\Enum\UnitOfWorkMode.cs" />
+    <Compile Include="Workflow\Interfaces\IMapperService.cs" />
+    <Compile Include="Workflow\Interfaces\IRepoService.cs" />
+    <Compile Include="Workflow\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Workflow\RepoUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMBooks.Common\CMBooks.Common.csproj">
+      <Project>{D8E2360A-A111-4032-AAC0-334DBC6E782F}</Project>
+      <Name>CMBooks.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMBooks.DataLayer\CMBooks.DataLayer.csproj">
+      <Project>{68cc762f-ff00-4e82-a40a-6bb55ae64860}</Project>
+      <Name>CMBooks.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deventure.DataLayer\Deventure.DataLayer.EF.csproj">
+      <Project>{4228FC32-9A6F-48C5-9947-A118A93E144A}</Project>
+      <Name>Deventure.DataLayer.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggingService\LoggingService.csproj">
+      <Project>{F7557265-6E66-42FC-AAD8-D9840327F10E}</Project>
+      <Name>LoggingService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
