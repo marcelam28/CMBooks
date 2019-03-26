@@ -40,3 +40,24 @@ C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.DataLayer\obj\Debug\CMBooks.DataL
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.csproj.CopyComplete
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.dll
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.pdb
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\CMBooks.DataLayer.dll.config
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\CMBooks.DataLayer.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\CMBooks.DataLayer.pdb
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\Deventure.DataLayer.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFramework.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFrameworkExtras.EF6.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\LoggingService.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\NLog.dll
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\Deventure.DataLayer.pdb
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\Deventure.DataLayer.dll.config
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFramework.xml
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\EntityFrameworkExtras.EF6.pdb
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\LoggingService.pdb
+E:\Proiect IC\CMBooks.DataLayer\bin\Debug\NLog.xml
+E:\Proiect IC\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.csprojAssemblyReference.cache
+E:\Proiect IC\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.csproj.CoreCompileInputs.cache
+E:\Proiect IC\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.csproj.CopyComplete
+E:\Proiect IC\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.dll
+E:\Proiect IC\CMBooks.DataLayer\obj\Debug\CMBooks.DataLayer.pdb

@@ -54,3 +54,31 @@ C:\Users\Marcela\Desktop\ProiectIC-Git\Deventure.BusinessLogic\obj\Debug\Deventu
 C:\Users\Marcela\Desktop\ProiectIC-Git\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.csproj.CopyComplete
 C:\Users\Marcela\Desktop\ProiectIC-Git\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.dll
 C:\Users\Marcela\Desktop\ProiectIC-Git\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.BusinessLogic.dll.config
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.BusinessLogic.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.BusinessLogic.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\CMBooks.Common.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\CMBooks.DataLayer.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.Common.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.DataLayer.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\EntityFramework.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\LoggingService.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\NLog.dll
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\CMBooks.Common.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\CMBooks.DataLayer.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\CMBooks.DataLayer.dll.config
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.DataLayer.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Deventure.DataLayer.dll.config
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\LoggingService.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\EntityFramework.xml
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Newtonsoft.Json.pdb
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+E:\Proiect IC\Deventure.BusinessLogic\bin\Debug\NLog.xml
+E:\Proiect IC\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.csprojAssemblyReference.cache
+E:\Proiect IC\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.csproj.CoreCompileInputs.cache
+E:\Proiect IC\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.csproj.CopyComplete
+E:\Proiect IC\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.dll
+E:\Proiect IC\Deventure.BusinessLogic\obj\Debug\Deventure.BusinessLogic.pdb

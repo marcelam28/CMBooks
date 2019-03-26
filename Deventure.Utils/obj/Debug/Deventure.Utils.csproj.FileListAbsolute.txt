@@ -13,3 +13,18 @@ C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.Utils\bin\Debug\NLog.xml
 C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.Utils\obj\Debug\Deventure.Utils.csproj.CopyComplete
 C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.Utils\obj\Debug\Deventure.Utils.dll
 C:\Users\Marcela\Desktop\ProiectIC\CMBooks\Deventure.Utils\obj\Debug\Deventure.Utils.pdb
+E:\Proiect IC\Deventure.Utils\bin\Debug\Deventure.Utils.dll
+E:\Proiect IC\Deventure.Utils\bin\Debug\Deventure.Utils.pdb
+E:\Proiect IC\Deventure.Utils\bin\Debug\LoggingService.dll
+E:\Proiect IC\Deventure.Utils\bin\Debug\RazorEngine.dll
+E:\Proiect IC\Deventure.Utils\bin\Debug\System.Web.Razor.dll
+E:\Proiect IC\Deventure.Utils\bin\Debug\NLog.dll
+E:\Proiect IC\Deventure.Utils\bin\Debug\LoggingService.pdb
+E:\Proiect IC\Deventure.Utils\bin\Debug\RazorEngine.xml
+E:\Proiect IC\Deventure.Utils\bin\Debug\System.Web.Razor.xml
+E:\Proiect IC\Deventure.Utils\bin\Debug\NLog.xml
+E:\Proiect IC\Deventure.Utils\obj\Debug\Deventure.Utils.csprojAssemblyReference.cache
+E:\Proiect IC\Deventure.Utils\obj\Debug\Deventure.Utils.csproj.CoreCompileInputs.cache
+E:\Proiect IC\Deventure.Utils\obj\Debug\Deventure.Utils.csproj.CopyComplete
+E:\Proiect IC\Deventure.Utils\obj\Debug\Deventure.Utils.dll
+E:\Proiect IC\Deventure.Utils\obj\Debug\Deventure.Utils.pdb

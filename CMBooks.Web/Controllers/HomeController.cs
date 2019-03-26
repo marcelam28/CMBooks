@@ -42,5 +42,17 @@ namespace CMBooks.Web.Controllers
 
             return true;
         }
+        public bool CreateUser(DataLayer.User user)
+        {
+            bool response = false;
+            if (user == null)
+            {
+                return response;
+            }
+
+            var createdUser = UserCore.Create(user);
+
+            return true;
+        }
     }
 }
