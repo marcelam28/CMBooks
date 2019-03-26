@@ -58,3 +58,33 @@ C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.BussinessLogic\obj\Debug\CMBooks.
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.csproj.CopyComplete
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.dll
 C:\Users\Marcela\Desktop\ProiectIC-Git\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.BussinessLogic.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.BussinessLogic.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.DataLayer.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.Models.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.BusinessLogic.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.Common.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.DataLayer.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\LoggingService.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\EntityFramework.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Newtonsoft.Json.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\NLog.dll
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.DataLayer.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.DataLayer.dll.config
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\CMBooks.Models.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.BusinessLogic.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.BusinessLogic.dll.config
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.DataLayer.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Deventure.DataLayer.dll.config
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\LoggingService.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\EntityFramework.xml
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Newtonsoft.Json.pdb
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\Newtonsoft.Json.xml
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+E:\Proiect IC\CMBooks.BussinessLogic\bin\Debug\NLog.xml
+E:\Proiect IC\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.csprojAssemblyReference.cache
+E:\Proiect IC\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.csproj.CoreCompileInputs.cache
+E:\Proiect IC\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.csproj.CopyComplete
+E:\Proiect IC\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.dll
+E:\Proiect IC\CMBooks.BussinessLogic\obj\Debug\CMBooks.BussinessLogic.pdb
