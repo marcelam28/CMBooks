@@ -567,18 +567,16 @@ namespace Deventure.BusinessLogic.Core
 
         }
 
-        public static TModel Create(TModel model, bool refreshFromDb = false, TRepo Trepository = null, IList<string> navigationProperties = null)
+        public static TDataAccessModel Create(TDataAccessModel model, bool refreshFromDb = false, TRepo Trepository = null, IList<string> navigationProperties = null)
         {
             if (Trepository == null)
             {
                 Trepository = RepoUnitOfWork.CreateTrackingRepository<TRepo>();
             }
-            var entity = model.CopyTo<TDataAccessModel>();
 
-            entity = Trepository.Create(entity, refreshFromDb, navigationProperties);
+            model = Trepository.Create(model, refreshFromDb, navigationProperties);
 
-            return entity.CopyTo<TModel>();
-
+            return model;
         }
 
         public static async Task<IList<TModel>> CreateAsync(IList<TModel> modelCollection, bool refreshFromDb = false, IList<string> navigationProperties = null)

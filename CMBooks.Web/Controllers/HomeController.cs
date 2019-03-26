@@ -30,17 +30,17 @@ namespace CMBooks.Web.Controllers
             return View();
         }
 
-        public bool CreateBook()
+        public bool CreateBook(DataLayer.Book book)
         {
             bool response = false;
-            var book = new Book()
+            if (book == null)
             {
-
-            };
+                return response;
+            }
 
             var createdBook = BookCore.Create(book);
 
-            return response;
+            return true;
         }
     }
 }
