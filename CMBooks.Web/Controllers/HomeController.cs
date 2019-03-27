@@ -29,30 +29,5 @@ namespace CMBooks.Web.Controllers
 
             return View();
         }
-
-        public bool CreateBook(DataLayer.Book book)
-        {
-            bool response = false;
-            if (book == null)
-            {
-                return response;
-            }
-
-            var createdBook = BookCore.Create(book);
-
-            return true;
-        }
-        public bool CreateUser(DataLayer.User user)
-        {
-            bool response = false;
-            if (user == null)
-            {
-                return response;
-            }
-
-            var createdUser = UserCore.Create(user);
-
-            return true;
-        }
     }
 }
