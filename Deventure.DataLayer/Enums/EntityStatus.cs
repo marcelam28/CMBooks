@@ -1,9 +1,9 @@
 ﻿namespace Deventure.DataLayer.EF.Enums
 {
-    public enum EntityStatus
+    public class EntityStatus
     {
-        Deleted = -1,
-        Active = 0,
-        Rejected = 1
+        public static bool  Deleted = false;
+
+        public static bool Active = true;
     }
 }

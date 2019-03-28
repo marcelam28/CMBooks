@@ -1,10 +1,9 @@
-﻿using CMBooks.Common.Response;
-using Deventure.BusinessLogic.TypeManagement;
+﻿using Deventure.BusinessLogic.TypeManagement;
 using Deventure.BusinessLogic.Workflow;
 using Deventure.Common.Interfaces;
-using Deventure.Common.Response;
 using Deventure.DataLayer.Interfaces;
 using Deventure.DataLayer.Repositories;
+using CMBooks.Common.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +35,12 @@ namespace Deventure.BusinessLogic.Core
             }
         }
 
-        public static TModel GetSingle(Expression<Func<TDataAccessModel, bool>> where, IList<string> navigationProperties = null)
+        public static TDataAccessModel GetSingle(Expression<Func<TDataAccessModel, bool>> where, IList<string> navigationProperties = null)
         {
             using (var repository = RepoUnitOfWork.CreateRepository<TRepo>())
             {
                 var entities = repository.GetSingle(where, navigationProperties);
-                return entities.CopyTo<TModel>();
+                return entities;
             }
         }
 

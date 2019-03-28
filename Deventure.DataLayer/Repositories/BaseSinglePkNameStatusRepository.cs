@@ -13,12 +13,12 @@ namespace Deventure.DataLayer.Repositories
             {
                 names[i] = names[i];
             }
-            return await GetListAsync(entity => (names.Contains(entity.Name) && entity.Status == (int)EntityStatus.Active)).ConfigureAwait(false);
+            return await GetListAsync(entity => (names.Contains(entity.Name) && entity.Status == EntityStatus.Active)).ConfigureAwait(false);
         }
 
         public async Task<T> GetSingleByNameAsync(string name)
         {
-            return await GetSingleAsync(entity => (entity.Name == name && entity.Status == (int)EntityStatus.Active)).ConfigureAwait(false);
+            return await GetSingleAsync(entity => (entity.Name == name && entity.Status == EntityStatus.Active)).ConfigureAwait(false);
         }
     }
 }
