@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -155,6 +156,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Md5Helper.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,7 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -218,6 +221,10 @@
     <ProjectReference Include="..\CMBooks.BussinessLogic\CMBooks.BussinessLogic.csproj">
       <Project>{755777F6-FA28-4A74-8FBC-1CA2E105C7D8}</Project>
       <Name>CMBooks.BussinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMBooks.Common\CMBooks.Common.csproj">
+      <Project>{D8E2360A-A111-4032-AAC0-334DBC6E782F}</Project>
+      <Name>CMBooks.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\CMBooks.DataLayer\CMBooks.DataLayer.csproj">
       <Project>{68CC762F-FF00-4E82-A40A-6BB55AE64860}</Project>

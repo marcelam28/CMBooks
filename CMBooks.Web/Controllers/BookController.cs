@@ -1,4 +1,6 @@
-﻿using CMBooks.BussinessLogic.Cores;
+﻿using CMBooks.BusinessLogic.Models;
+using CMBooks.BussinessLogic.Cores;
+using CMBooks.Common.Response;
 using CMBooks.DataLayer.Repositories;
 using CMBooks.Models;
 using System;
@@ -11,19 +13,11 @@ namespace CMBooks.Web.Controllers
 {
     public class BookController : Controller
     {
-
-        public bool CreateBook(DataLayer.Book book)
+        [HttpPost]
+        public JsonResult CreateBook(BookViewModel book)
         {
-            bool response = false;
-            if (book == null)
-            {
-                return response;
-            }
-
             var createdBook = BookCore.Create(book);
-
-            return true;
+            return Json(createdBook);
         }
-        
     }
 }

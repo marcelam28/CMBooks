@@ -1,7 +1,6 @@
 ﻿using Deventure.BusinessLogic.Services;
 using Deventure.BusinessLogic.Workflow;
 using Deventure.Common.Interfaces;
-using Deventure.Common.Response;
 using Deventure.DataLayer.Interfaces;
 using Deventure.DataLayer.Repositories;
 using System;
@@ -11,6 +10,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using UpWorky.BusinessLogic.Workflow.Interfaces;
 using Deventure.BusinessLogic.TypeManagement;
+using CMBooks.Common.Response;
 
 namespace Deventure.BusinessLogic.Core
 {
