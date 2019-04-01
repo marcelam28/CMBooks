@@ -1,4 +1,5 @@
-﻿using CMBooks.BussinessLogic.Cores;
+﻿using CMBooks.BusinessLogic.Models;
+using CMBooks.BussinessLogic.Cores;
 using CMBooks.DataLayer.Repositories;
 using CMBooks.Models;
 using System;
@@ -12,17 +13,11 @@ namespace CMBooks.Web.Controllers
     public class CommentController : Controller
     {
 
-        public bool CreateComment(DataLayer.Comment comment)
+        [HttpPost]
+        public JsonResult CreateComment(CommentViewModel comment)
         {
-            bool response = false;
-            if (comment == null)
-            {
-                return response;
-            }
-            comment.AddedAt = DateTime.Now;
             var createdComment = CommentCore.Create(comment);
-
-            return true;
+            return Json(createdComment);
         }
     }
 }

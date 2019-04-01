@@ -1,4 +1,5 @@
-﻿using CMBooks.BussinessLogic.Cores;
+﻿using CMBooks.BusinessLogic.Models;
+using CMBooks.BussinessLogic.Cores;
 using CMBooks.DataLayer.Repositories;
 using CMBooks.Models;
 using System;
@@ -12,17 +13,11 @@ namespace CMBooks.Web.Controllers
     public class UserController : Controller
     {
 
-        public bool CreateUser(DataLayer.User user)
+        [HttpPost]
+        public JsonResult CreateUser(UserViewModel user)
         {
-            bool response = false;
-            if (user == null)
-            {
-                return response;
-            }
-
             var createdUser = UserCore.Create(user);
-
-            return true;
+            return Json(createdUser);
         }
     }
 }
