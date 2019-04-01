@@ -22,7 +22,7 @@ namespace CMBooks.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult Login(LoginModel model)
+        public ActionResult Login(LoginModel model)
         {
             var response = ResponseFactory.Success(ResponseCode.SuccessLoggedIn);
             if (model == null)
@@ -42,8 +42,8 @@ namespace CMBooks.Web.Controllers
             {
                 return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidPassword));
             }
-
-            return Json(response);
+            Session["userId"] = user.Id;
+            return (RedirectToAction("Index","Home"));
         }
     }
 }
