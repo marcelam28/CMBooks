@@ -22,28 +22,28 @@ namespace CMBooks.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel model)
+        public JsonResult Login(LoginModel model)
         {
             var response = ResponseFactory.Success(ResponseCode.SuccessLoggedIn);
             if (model == null)
             {
-                return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidInput));
+                return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidInput),JsonRequestBehavior.AllowGet);
             }
 
             var user = UserCore.GetSingle(userTemp => userTemp.Email == model.Email);
             if (user == null)
             {
-                return Json(ResponseFactory.Error(ResponseCode.ErrorEmailInvalid));
+                return Json(ResponseFactory.Error(ResponseCode.ErrorEmailInvalid), JsonRequestBehavior.AllowGet);
             }
 
             var check = Md5Helper.VerifyPassword(model.Password,user.Password);
 
             if (check == false)
             {
-                return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidPassword));
+                return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidPassword), JsonRequestBehavior.AllowGet);
             }
             Session["userId"] = user.Id;
-            return (RedirectToAction("Index","Home"));
+            return Json(response);
         }
     }
 }
