@@ -2,10 +2,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
-    font-family: Poppins-Regular;
-    src: url('../fonts/poppins/Poppins-Regular.ttf');
-}
+
 
 @font-face {
     font-family: Poppins-Medium;
@@ -23,19 +20,11 @@
 }
 
 @font-face {
-    font-family: Montserrat-Bold;
-    src: url('../fonts/montserrat/Montserrat-Bold.ttf');
-}
-
-@font-face {
     font-family: Montserrat-SemiBold;
     src: url('../fonts/montserrat/Montserrat-SemiBold.ttf');
 }
 
-@font-face {
-    font-family: Montserrat-Regular;
-    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
-}
+
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -243,12 +232,13 @@ iframe {
 [ login ]*/
 .limiter {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
 }
 
 .container-login100 {
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -263,6 +253,7 @@ iframe {
 
 .wrap-login100 {
     width: 100%;
+    height:100%;
     background: #fff;
     overflow: hidden;
     display: -webkit-box;

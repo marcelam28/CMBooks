@@ -2,6 +2,7 @@
 using CMBooks.BussinessLogic.Cores;
 using CMBooks.DataLayer.Repositories;
 using CMBooks.Models;
+using CMBooks.Web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,10 @@ namespace CMBooks.Web.Controllers
         [HttpPost]
         public JsonResult CreateUser(UserViewModel user)
         {
+            if (user != null)
+            {
+                user.Password = Md5Helper.Hash(user.Password);
+            }
             var createdUser = UserCore.Create(user);
             return Json(createdUser);
         }
