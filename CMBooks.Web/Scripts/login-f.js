@@ -1,5 +1,7 @@
 function login() {
             debugger;
+    EasyLoading.show();
+
             var email = $('#email').val();
             var password = $('#password').val();
             var formData = {
@@ -10,10 +12,11 @@ function login() {
                 'Account/Login',
                 formData,
                 function (response) {
+                    EasyLoading.hide();
                     if (response.Success == true) {
                         if (response.StatusCode == 2) {
                             toastr.success("Logged in successfully!");
-                            window.location = "http://localhost:62402/Home/Index";
+                            setTimeout(function () { window.location = "http://localhost:62402/Home/Index" }, 500);
                             $('#email').val("");
                             $('#password').val("");
                         }
@@ -28,6 +31,7 @@ function login() {
                     }
                 },
                 function () {
+                    EasyLoading.hide();
                     toastr.error("Unable to login!");
                 }
             )

@@ -28,6 +28,11 @@ namespace CMBooks.Web
                         "~/Scripts/login.js"));
             bundles.Add(new ScriptBundle("~/bundles/login-f").Include(
                         "~/Scripts/login-f.js"));
+            bundles.Add(new ScriptBundle("~/bundles/register").Include(
+                        "~/Scripts/register.js"));
+            bundles.Add(new ScriptBundle("~/bundles/loading").Include(
+                       "~/Scripts/easy-loading.js",
+                       "~/Scripts/easy-loading.min.js"));
             #endregion
 
             #region StyleBundles
@@ -38,6 +43,9 @@ namespace CMBooks.Web
                        "~/Content/login.css"));
             bundles.Add(new StyleBundle("~/Content/toastr").Include(
                        "~/Content/toastr.css"));
+            bundles.Add(new StyleBundle("~/Content/loading").Include(
+                       "~/Content/easy-loading.css",
+                       "~/Content/easy-loading.min.css"));
             #endregion
 
         }
