@@ -475,12 +475,12 @@ namespace Deventure.BusinessLogic.Core
             }
         }
 
-        public static IList<TModel> GetAll(IList<string> navigationProperties = null)
+        public static IList<TDataAccessModel> GetAll(IList<string> navigationProperties = null)
         {
             using (var repository = RepoUnitOfWork.CreateRepository<TRepo>())
             {
                 var entities = repository.GetAll(navigationProperties);
-                return entities.CopyTo<TModel>();
+                return entities;
             }
         }
 
@@ -516,12 +516,12 @@ namespace Deventure.BusinessLogic.Core
             }
         }
 
-        public static IList<TModel> GetList(Expression<Func<TDataAccessModel, bool>> where, IList<string> navigationProperties = null)
+        public static IList<TDataAccessModel> GetList(Expression<Func<TDataAccessModel, bool>> where, IList<string> navigationProperties = null)
         {
             using (var repository = RepoUnitOfWork.CreateRepository<TRepo>())
             {
                 var entities = repository.GetList(@where, navigationProperties);
-                return entities.CopyTo<TModel>();
+                return entities;
             }
         }
 

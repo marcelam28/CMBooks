@@ -13,7 +13,22 @@ namespace CMBooks.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var books = BookCore.GetAll();
+            return View(books);
+        }
+
+        public PartialViewResult Filter(string genre)
+        {
+            IList<DataLayer.Book> books;
+            if (string.IsNullOrWhiteSpace(genre))
+            {
+                books = BookCore.GetAll();
+            }
+            else
+            {
+                books = BookCore.GetList(b => b.Genre == genre);
+            }
+            return PartialView("~/Views/Home/_BooksGallery.cshtml", books);
         }
 
         public ActionResult About()

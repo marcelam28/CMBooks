@@ -4,55 +4,56 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+    <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="Title" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="Author" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="PublicationDate" Nullable="false" Type="date" />
-          <Property Name="Pages" Nullable="false" Type="int" />
-          <Property Name="Description" MaxLength="1024" Type="nvarchar" />
-          <Property Name="Genre" Nullable="false" MaxLength="50" Type="nvarchar" />
-          <Property Name="Status" Nullable="false" Type="bit" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Author" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PublicationDate" Type="date" Nullable="false" />
+          <Property Name="Pages" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="PictureUrl" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Comments">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="UserId" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="BookId" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="Comment" Nullable="false" MaxLength="500" Type="nvarchar" />
-          <Property Name="AddedAt" Nullable="false" Type="datetime" />
-          <Property Name="Status" Nullable="false" Type="bit" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BookId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AddedAt" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Rates">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="UserId" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="BookId" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="Rate" Nullable="false" Type="int" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BookId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Rate" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Nullable="false" Type="uniqueidentifier" />
-          <Property Name="FirstName" Nullable="false" MaxLength="30" Type="nvarchar" />
-          <Property Name="LastName" Nullable="false" MaxLength="30" Type="nvarchar" />
-          <Property Name="Email" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" />
-          <Property Name="Password" Nullable="false" MaxLength="128" Type="nvarchar" />
-          <Property Name="IsAdmin" Nullable="false" Type="bit" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Comments_Books">
-          <End Type="Self.Books" Multiplicity="1" Role="Books" />
-          <End Type="Self.Comments" Multiplicity="*" Role="Comments" />
+          <End Role="Books" Type="Self.Books" Multiplicity="1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="Id" />
@@ -63,8 +64,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comments_Users">
-          <End Type="Self.Users" Multiplicity="1" Role="Users" />
-          <End Type="Self.Comments" Multiplicity="*" Role="Comments" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -75,8 +76,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rates_Books">
-          <End Type="Self.Books" Multiplicity="1" Role="Books" />
-          <End Type="Self.Rates" Multiplicity="*" Role="Rates" />
+          <End Role="Books" Type="Self.Books" Multiplicity="1" />
+          <End Role="Rates" Type="Self.Rates" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="Id" />
@@ -87,8 +88,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Rates_Users">
-          <End Type="Self.Users" Multiplicity="1" Role="Users" />
-          <End Type="Self.Rates" Multiplicity="*" Role="Rates" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Rates" Type="Self.Rates" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -104,24 +105,23 @@
           <EntitySet Name="Rates" EntityType="Self.Rates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Comments_Books" Association="Self.FK_Comments_Books">
-            <End EntitySet="Books" Role="Books" />
-            <End EntitySet="Comments" Role="Comments" />
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
           <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
-            <End EntitySet="Users" Role="Users" />
-            <End EntitySet="Comments" Role="Comments" />
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
           <AssociationSet Name="FK_Rates_Books" Association="Self.FK_Rates_Books">
-            <End EntitySet="Books" Role="Books" />
-            <End EntitySet="Rates" Role="Rates" />
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Rates" EntitySet="Rates" />
           </AssociationSet>
           <AssociationSet Name="FK_Rates_Users" Association="Self.FK_Rates_Users">
-            <End EntitySet="Users" Role="Users" />
-            <End EntitySet="Rates" Role="Rates" />
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Rates" EntitySet="Rates" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -139,6 +139,7 @@
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Books" FromRole="Books" ToRole="Comments" />
           <NavigationProperty Name="Rates" Relationship="Self.FK_Rates_Books" FromRole="Books" ToRole="Rates" />
+          <Property Name="PictureUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
@@ -257,6 +258,7 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="DBModel.Book">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="PictureUrl" ColumnName="PictureUrl" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Author" ColumnName="Author" />
