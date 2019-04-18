@@ -33,6 +33,8 @@ namespace CMBooks.Web
             bundles.Add(new ScriptBundle("~/bundles/loading").Include(
                        "~/Scripts/easy-loading.js",
                        "~/Scripts/easy-loading.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/books-gallery").Include(
+                        "~/Scripts/books-gallery.js"));
             #endregion
 
             #region StyleBundles
@@ -46,6 +48,8 @@ namespace CMBooks.Web
             bundles.Add(new StyleBundle("~/Content/loading").Include(
                        "~/Content/easy-loading.css",
                        "~/Content/easy-loading.min.css"));
+            bundles.Add(new StyleBundle("~/Content/books-gallery").Include(
+                       "~/Content/books-gallery.css"));
             #endregion
 
         }

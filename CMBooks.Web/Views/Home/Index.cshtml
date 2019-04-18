@@ -7,74 +7,36 @@
     }
 
 }
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    /* Style the side navigation */
-    .sidenav {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-    }
+@Styles.Render("~/Content/books-gallery")
 
 
-        /* Side navigation links */
-        .sidenav button {
-            color: white;
-            padding: 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-            /* Change color on hover */
-            .sidenav button:hover {
-                background-color: #ddd;
-                color: black;
-            }
-
-    /* Style the content */
-    .content {
-        margin-left: 200px;
-        padding-left: 20px;
-    }
-
-   
-</style>
-
-    <div class="sidenav">
-        <button onclick="filter('')">All</button>
-        <button onclick="filter('Romantic')">Romantic</button>
-        <button onclick="filter('Mistery')">Mistery</button>
-        <button onclick="filter('Horror')">Horror</button>
+<div class="grid-container">
+    <div class="header">
+        <p style="float:left;font-size:30px;"> CMBooks</p>
+        <button style=" background-color: transparent;color: black;border:transparent;float:right;font-size:20px">Sign out</button>
     </div>
 
-    <div class="content">
+    <div class="left" style="background-color:#aaa;">
+        <button class="filter-button" onclick="filter('')">All</button>
+        <button class="filter-button" onclick="filter('Romantic')">Romantic</button>
+        <button class="filter-button" onclick="filter('Mistery')">Mistery</button>
+        <button class="filter-button" onclick="filter('Horror')">Horror</button>
+    </div>
+    <div class="middle" style="background-color:#bbb;">
         <div id="partial-view">
-            @Html.Partial("_BooksGallery",Model);
+            @Html.Partial("_BooksGallery", Model);
         </div>
     </div>
 
-<script>
-    function filter(genre) {
-        AjaxHelper.getViewWithoutData("/Home/Filter?genre=" + genre,
-            function (result) {
-                $("#partial-view").html(result);
-            },
-            function (err) {
-            }
-        )
-    }
-</script>
+</div>
+
+@Scripts.Render("~/bundles/books-gallery")
+@*@section scripts{
+    <script>
+        var bvTireRating = 3.3;
+        // multiply by 20 to get percentage
+        var starRating = bvTireRating * 8.5;
+        // set the width of the stars
+        $('.star-ratings-top').width(starRating + '%');
+    </script>
+}*@

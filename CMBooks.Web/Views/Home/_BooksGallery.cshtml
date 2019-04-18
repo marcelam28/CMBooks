@@ -1,37 +1,22 @@
 ﻿@model IList<CMBooks.DataLayer.Book>
 
-<style>
-    div.gallery {
-        margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        height: 200px;
-    }
 
-        div.gallery:hover {
-            border: 1px solid #777;
-        }
-
-        div.gallery img {
-            width: 100%;
-            height: auto;
-        }
-
-    div.desc {
-        padding: 15px;
-        text-align: center;
-    }
-</style>
-
-
-
-    @foreach (var book in Model)
-    {
-
-        <div class="gallery">
-            <img src="@book.PictureUrl" width="600px" height="400px">
-            <div class="desc">@book.Title</div>
+@foreach (var book in Model)
+{
+    <div class="book-container">
+        <div class="book-image">
+            <img src="@book.PictureUrl">
         </div>
-    }
+        <div class="book-text">
+            <h4 style="margin-top:5px;">@book.Title (@book.Author)</h4>
+            <p>| @book.Genre</p>
+            @*<div class="star-ratings">
+                <div class="star-ratings-top"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="star-ratings-bottom"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
+            </div>*@
+            <div style="margin-top:30px;font-size:15px;">@book.Description</div>
+        </div>
+    </div>
+}
+
 
