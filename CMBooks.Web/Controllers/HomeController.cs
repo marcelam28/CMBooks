@@ -31,6 +31,20 @@ namespace CMBooks.Web.Controllers
             return PartialView("~/Views/Home/_BooksGallery.cshtml", books);
         }
 
+        public PartialViewResult GetBookDetails(Guid id)
+        {
+            DataLayer.Book book;
+            if (id == Guid.Empty)
+            {
+                return null;
+            }
+            else
+            {
+                book = BookCore.Get(id);
+            }
+            return PartialView("~/Views/Home/_BookDetails.cshtml", book);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

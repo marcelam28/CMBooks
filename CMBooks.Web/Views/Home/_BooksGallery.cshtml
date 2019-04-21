@@ -5,7 +5,7 @@
 {
     <div class="book-container">
         <div class="book-image">
-            <img src="@book.PictureUrl">
+            <img src="@book.PictureUrl" id="@book.Id" onclick="showDetailsModal('@book.Id')">
         </div>
         <div class="book-text">
             <h4 style="margin-top:5px;">@book.Title (@book.Author)</h4>

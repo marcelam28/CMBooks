@@ -26,12 +26,12 @@ namespace Deventure.BusinessLogic.Core
             }
         }
 
-        public static TModel Get(Guid id, IList<string> navigationProperties = null)
+        public static TDataAccessModel Get(Guid id, IList<string> navigationProperties = null)
         {
             using (var repository = RepoUnitOfWork.CreateRepository<TRepo>())
             {
                 var entities = repository.Get(id, navigationProperties);
-                return entities.CopyTo<TModel>();
+                return entities;
             }
         }
 
