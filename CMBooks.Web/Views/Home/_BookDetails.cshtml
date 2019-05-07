@@ -1,4 +1,4 @@
-﻿@model CMBooks.DataLayer.Book 
+﻿@model CMBooks.BusinessLogic.Models.BookViewModel 
 
 <div class="modal right fade" id="book-details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
@@ -15,24 +15,32 @@
                         <img src="@Model.PictureUrl" style="max-height:300px;max-width:100%;text-align: center">
                     </div>
                     <div class="column description-details">
-                        <h4>
-                            Author:
-                        </h4>
-                        <p>
-                            @Model.Author
-                        </p>
-                        <h4>
-                            Genre:
-                        </h4>
-                        <p>
-                            @Model.Genre
-                        </p>
-                        <h4>
-                            Description
-                        </h4>
-                        <p style="overflow:hidden;">
-                            @Model.Description
-                        </p>
+                        <div style="display:inline-block;width: 100%; ">
+                            <div style="display:inherit">
+                                <h4>
+                                    Author:
+                                </h4>
+                                <p>
+                                    @Model.Author
+                                </p>
+                            </div>
+                            <div style="float:right; margin-right: 20px">
+                                <span class="my-rating" data-rating="@Model.Rate"></span>
+                            </div>
+                        </div>
+                            <h4>
+                                Genre:
+                            </h4>
+                            <p>
+                                @Model.Genre
+                            </p>
+                            <h4>
+                                Description
+                            </h4>
+                            <p style="overflow:hidden;">
+                                @Model.Description
+                            </p>
+                        
                     </div>
                 </div>
                 <div class="comments">
@@ -47,4 +55,25 @@
     </div><!-- modal-dialog -->
 </div><!-- modal -->
 
-
+<script>
+     $(".my-rating").starRating({
+               strokeColor: '#894A00',
+               strokeWidth: 10,
+               starSize: 25,
+               callback: function (currentRating, $el) {
+                   var postData = {
+                       "UserId": "@Session["UserId"]",
+                       "BookId": "@Model.Id",
+                       "Rate1": currentRating
+                   }
+                   AjaxHelper.post("Rate/CreateRate", postData,
+                       function (response) {
+                           debugger
+                       },
+                       function () {
+                           debugger
+                       }
+                   )
+               }
+           });
+</script>

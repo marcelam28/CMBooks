@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CMBooks.BusinessLogic.Models
+namespace CMBooks.Models
 {
     public class UserViewModel
     {

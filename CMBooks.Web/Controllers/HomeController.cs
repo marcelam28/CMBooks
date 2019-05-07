@@ -1,10 +1,10 @@
-﻿using CMBooks.BussinessLogic.Cores;
-using CMBooks.DataLayer.Repositories;
+﻿using CMBooks.BusinessLogic.Models;
+using CMBooks.BussinessLogic.Cores;
+using CMBooks.BussinessLogic.Helpers;
 using CMBooks.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CMBooks.Web.Controllers
@@ -13,8 +13,10 @@ namespace CMBooks.Web.Controllers
     {
         public ActionResult Index()
         {
-            var books = BookCore.GetAll();
-            return View(books);
+            var books = BookCore.GetAll(new[] { nameof(Book.Rates)});
+            List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
+
+            return View(booksVMList);
         }
 
         public PartialViewResult Filter(string genre)
@@ -26,9 +28,11 @@ namespace CMBooks.Web.Controllers
             }
             else
             {
-                books = BookCore.GetList(b => b.Genre == genre);
+                books = BookCore.GetList(b => b.Genre == genre, new[] { nameof(Book.Rates) });
             }
-            return PartialView("~/Views/Home/_BooksGallery.cshtml", books);
+            List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
+
+            return PartialView("~/Views/Home/_BooksGallery.cshtml", booksVMList);
         }
 
         public PartialViewResult GetBookDetails(Guid id)
@@ -40,9 +44,10 @@ namespace CMBooks.Web.Controllers
             }
             else
             {
-                book = BookCore.Get(id);
+                book = BookCore.Get(id, new[] { nameof(Book.Rates) });
             }
-            return PartialView("~/Views/Home/_BookDetails.cshtml", book);
+            BookViewModel bookVM = DLtoModelsConvertor.ConvertBookDLIntoBookVM(book);
+            return PartialView("~/Views/Home/_BookDetails.cshtml", bookVM);
         }
 
         public ActionResult About()

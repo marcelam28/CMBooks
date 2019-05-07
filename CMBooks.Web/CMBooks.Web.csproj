@@ -169,6 +169,7 @@
     <Content Include="Content\easy-loading.css" />
     <Content Include="Content\easy-loading.min.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\star-rating-svg.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -188,7 +189,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.star-rating-svg.js" />
+    <Content Include="Scripts\jquery.validate-vsdo.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -254,6 +256,10 @@
     <ProjectReference Include="..\Deventure.BusinessLogic\Deventure.BusinessLogic.csproj">
       <Project>{16B85C8D-AB4C-47A7-81B3-B16F0DA0DCA4}</Project>
       <Name>Deventure.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deventure.DataLayer\Deventure.DataLayer.EF.csproj">
+      <Project>{4228FC32-9A6F-48C5-9947-A118A93E144A}</Project>
+      <Name>Deventure.DataLayer.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -18,6 +18,10 @@ namespace CMBooks.BusinessLogic.Models
 
         public string Genre { get; set; }
 
+        public string PictureUrl { get; set; }
+
+        public int Rate { get; set; }
+
         public DataLayer.Book CopyTo()
         {
             return new DataLayer.Book()
@@ -28,7 +32,7 @@ namespace CMBooks.BusinessLogic.Models
                 PublicationDate = this.PublicationDate,
                 Pages = this.Pages,
                 Description = this.Description,
-                Genre = this.Genre
+                Genre = this.Genre,
             };
         }
     }

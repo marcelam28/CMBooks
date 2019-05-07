@@ -7,18 +7,23 @@
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/toastr")
     @Styles.Render("~/Content/loading")
+    @Styles.Render("~/Content/rating")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/rating")
+    @Styles.Render("~/Content/rating")
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 <body style="padding:0px">
     @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
+   
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/login")
     @Scripts.Render("~/bundles/AjaxHelper")
     @Scripts.Render("~/bundles/toastr")
     @Scripts.Render("~/bundles/loading")
     @Scripts.Render("~/bundles/jqueryval")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
