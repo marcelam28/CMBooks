@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CMBooks.BusinessLogic.Models
 {
@@ -21,6 +22,8 @@ namespace CMBooks.BusinessLogic.Models
         public string PictureUrl { get; set; }
 
         public int Rate { get; set; }
+
+        public List<CommentModel> Comments { get; set; }
 
         public DataLayer.Book CopyTo()
         {

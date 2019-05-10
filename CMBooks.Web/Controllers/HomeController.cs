@@ -13,7 +13,9 @@ namespace CMBooks.Web.Controllers
     {
         public ActionResult Index()
         {
-            var books = BookCore.GetAll(new[] { nameof(Book.Rates)});
+            var books = BookCore.GetAll(new[] { nameof(Book.Rates),
+                                                $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"
+            });
             List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
 
             return View(booksVMList);
@@ -28,7 +30,8 @@ namespace CMBooks.Web.Controllers
             }
             else
             {
-                books = BookCore.GetList(b => b.Genre == genre, new[] { nameof(Book.Rates) });
+                books = BookCore.GetList(b => b.Genre == genre, new[] { nameof(Book.Rates) ,
+                                                                $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"});
             }
             List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
 
@@ -44,11 +47,27 @@ namespace CMBooks.Web.Controllers
             }
             else
             {
-                book = BookCore.Get(id, new[] { nameof(Book.Rates) });
+                book = BookCore.Get(id, new[] { nameof(Book.Rates),
+                                                 $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"});
             }
             BookViewModel bookVM = DLtoModelsConvertor.ConvertBookDLIntoBookVM(book);
             return PartialView("~/Views/Home/_BookDetails.cshtml", bookVM);
         }
+
+        //public PartialViewResult GetBookComments(Guid id)
+        //{
+        //    DataLayer.Book book;
+        //    if (id == Guid.Empty)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        book = BookCore.Get(id, new[] { nameof(Book.Rates), nameof(Book.Comments) });
+        //    }
+        //    BookViewModel bookVM = DLtoModelsConvertor.ConvertBookDLIntoBookVM(book);
+        //    return PartialView("~/Views/Home/_BookComments.cshtml", bookVM.Comments);
+        //}
 
         public ActionResult About()
         {

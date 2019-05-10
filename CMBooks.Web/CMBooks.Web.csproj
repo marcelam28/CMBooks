@@ -219,6 +219,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Home\_BooksGallery.cshtml" />
     <Content Include="Views\Home\_BookDetails.cshtml" />
+    <Content Include="Views\Home\_BookComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

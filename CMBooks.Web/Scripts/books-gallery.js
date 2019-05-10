@@ -26,3 +26,18 @@ function showDetailsModal(id) {
 		}
 	)
 }
+
+//function showComments(id) {
+//    EasyLoading.show();
+//    AjaxHelper.getViewWithoutData("Home/GetBookComments?id=" + id,
+//        function (result) {
+//            $("#list-of-comments").html(result);
+//            EasyLoading.hide();
+//        },
+//        function (err) {
+//            EasyLoading.hide();
+//            toastr.error("An error occured!");
+//        }
+//    )
+
+//}

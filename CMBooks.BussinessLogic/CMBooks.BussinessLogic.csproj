@@ -51,6 +51,7 @@
     <Compile Include="Cores\UserCore.cs" />
     <Compile Include="Helpers\Converter.cs" />
     <Compile Include="Models\BookViewModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\RateViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />

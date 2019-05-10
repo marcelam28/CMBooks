@@ -47,7 +47,13 @@
                     <h4>
                         Comments
                     </h4>
-                    <textarea placeholder="Add your comment here..." cols="100" rows="5" style="width:100%"></textarea>
+                    <textarea id="comment-@Model.Id" placeholder="Add your comment here..." cols="100" rows="5" style="width:100%"></textarea>
+                    <button type="button" onclick="addComment('comment-@Model.Id')" class="add-comment-button">Add</button>
+                    @*<button type="button" onclick="showComments('@Model.Id')">View comments</button>*@
+                    <div id="list-of-comments">
+                         @*@Html.Partial("_BookComments", new List<CMBooks.BusinessLogic.Models.CommentModel>())*@
+                        @Html.Partial("_BookComments", Model)
+                    </div>
                 </div>
             </div>
 
@@ -75,5 +81,28 @@
                        }
                    )
                }
-           });
+    });
+    function addComment(commentId)
+    {
+        var comment = $('#' + commentId).val();
+        var postData = {
+            "UserId": "@Session["UserId"]",
+            "BookId": "@Model.Id",
+            "Comment1": comment
+        }
+        if (comment != "") {
+            debugger;
+            AjaxHelper.post(
+                "Comment/CreateComment", postData,
+                function (response) {
+                    debugger
+                    toastr.success("Comment added!");
+                    $('#' + commentId).val('');
+                },
+                function () {
+                    debugger
+                }
+            )
+        }
+    }
 </script>

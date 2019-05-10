@@ -36,6 +36,22 @@ namespace CMBooks.BussinessLogic.Helpers
                 bookVM.Rate = 5;
             }
 
+            if (bookDL.Comments != null)
+            {
+                List<CommentModel> comments = new List<CommentModel>();
+                foreach(DataLayer.Comment c in bookDL.Comments)
+                {
+                    CommentModel newComment = new CommentModel();
+                    
+                    newComment.Comment1 = c.Comment1;
+                    newComment.AddedAt = c.AddedAt;
+                    newComment.UserName = c.User.FirstName;
+                    comments.Add(newComment);
+                    
+                }
+                bookVM.Comments = comments;
+            }
+
             return bookVM;
         }
 
