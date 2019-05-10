@@ -1,4 +1,5 @@
 ﻿function filter(genre) {
+	debugger
 	EasyLoading.show();
     AjaxHelper.getViewWithoutData("/Home/Filter?genre=" + genre,
         function (result) {

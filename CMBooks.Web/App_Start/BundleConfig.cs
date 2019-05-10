@@ -54,6 +54,8 @@ namespace CMBooks.Web
                        "~/Content/books-gallery.css"));
             bundles.Add(new StyleBundle("~/Content/rating").Include(
                        "~/Content/star-rating-svg.css"));
+            bundles.Add(new StyleBundle("~/Content/tabs").Include(
+                       "~/Content/tabs.css"));
             #endregion
 
         }
