@@ -16,137 +16,153 @@
 
         <h1>MYLOGO.COM</h1>
         <hr class="hr-style">
-        </div>
-        <section id="fancyTabWidget" class="tabs t-tabs">
-            <ul class="nav nav-tabs fancyTabs" role="tablist">
+    </div>
+    <section id="fancyTabWidget" class="tabs t-tabs">
+        <ul class="nav nav-tabs fancyTabs" role="tablist">
 
-                <li class="tab fancyTab active">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a onclick="filter('')" id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
+            <li class="tab fancyTab active">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a onclick="filter('')" id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
+                <div class="whiteBlock"></div>
+            </li>
 
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a onclick="filter('Romantic')" id="tab1" href="#tabBody0" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a onclick="filter('Romantic')" id="tab1" href="#tabBody0" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
+                <div class="whiteBlock"></div>
+            </li>
 
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
+                <div class="whiteBlock"></div>
+            </li>
 
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
+                <div class="whiteBlock"></div>
+            </li>
 
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
+                <div class="whiteBlock"></div>
+            </li>
 
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
-                <li class="tab fancyTab">
-                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                    <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-plus-circle"></span><span class="hidden-xs">Add book</span></a>
-                    <div class="whiteBlock"></div>
-                </li>
-            </ul>
-            <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
-                <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
-                    <div>
-                        <div class="row">
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
+                <div class="whiteBlock"></div>
+            </li>
+            <li class="tab fancyTab">
+                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                <a id="tab5" onclick="showAddBookModal()" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-plus-circle"></span><span class="hidden-xs">Add book</span></a>
+                <div class="whiteBlock"></div>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
+            <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
+                <div>
+                    <div class="row">
 
-                            <div class="col-md-12">
-                                <div class="middle" style="background-color:#bbb;">
-                                    <div id="partial-view">
-                                        @Html.Partial("_BooksGallery", Model)
-                                    </div>
+                        <div class="col-md-12">
+                            <div class="middle" style="background-color:#bbb;">
+                                <div id="partial-view">
+                                    @Html.Partial("_BooksGallery", Model)
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
-                </div>
-        </section>
-    </div>
-  
-    <div id="book-details-container">
-        @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
-    </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-    <script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'>
-    </script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<div id="book-details-container">
+    @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
+</div>
 
-    <script id="rendered-js">
+<div id="add-book-container">
+    @Html.Partial("_AddBook", new CMBooks.BusinessLogic.Models.BookViewModel())
+</div>
+<script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'>
+</script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-        $(document).ready(function () {
+<script id="rendered-js">
 
-            var numItems = $('li.fancyTab').length;
+    $(document).ready(function () {
 
-            if (numItems == 12) {
-                $("li.fancyTab").width('8.3%');
-            }
-            if (numItems == 11) {
-                $("li.fancyTab").width('9%');
-            }
-            if (numItems == 10) {
-                $("li.fancyTab").width('10%');
-            }
-            if (numItems == 9) {
-                $("li.fancyTab").width('11.1%');
-            }
-            if (numItems == 8) {
-                $("li.fancyTab").width('12.5%');
-            }
-            if (numItems == 7) {
-                $("li.fancyTab").width('14.2%');
-            }
-            if (numItems == 6) {
-                $("li.fancyTab").width('16.666666666666667%');
-            }
-            if (numItems == 5) {
-                $("li.fancyTab").width('20%');
-            }
-            if (numItems == 4) {
-                $("li.fancyTab").width('25%');
-            }
-            if (numItems == 3) {
-                $("li.fancyTab").width('33.3%');
-            }
-            if (numItems == 2) {
-                $("li.fancyTab").width('50%');
-            }
-        });
+        var numItems = $('li.fancyTab').length;
 
-        $(window).load(function () {
+        if (numItems == 12) {
+            $("li.fancyTab").width('8.3%');
+        }
+        if (numItems == 11) {
+            $("li.fancyTab").width('9%');
+        }
+        if (numItems == 10) {
+            $("li.fancyTab").width('10%');
+        }
+        if (numItems == 9) {
+            $("li.fancyTab").width('11.1%');
+        }
+        if (numItems == 8) {
+            $("li.fancyTab").width('12.5%');
+        }
+        if (numItems == 7) {
+            $("li.fancyTab").width('14.2%');
+        }
+        if (numItems == 6) {
+            $("li.fancyTab").width('16.666666666666667%');
+        }
+        if (numItems == 5) {
+            $("li.fancyTab").width('20%');
+        }
+        if (numItems == 4) {
+            $("li.fancyTab").width('25%');
+        }
+        if (numItems == 3) {
+            $("li.fancyTab").width('33.3%');
+        }
+        if (numItems == 2) {
+            $("li.fancyTab").width('50%');
+        }
+    });
 
-            $('.fancyTabs').each(function () {
+    $(window).load(function () {
 
-                var highestBox = 0;
-                $('.fancyTab a', this).each(function () {
+        $('.fancyTabs').each(function () {
 
-                    if ($(this).height() > highestBox)
-                        highestBox = $(this).height();
-                });
+            var highestBox = 0;
+            $('.fancyTab a', this).each(function () {
 
-                $('.fancyTab a', this).height(highestBox);
-
+                if ($(this).height() > highestBox)
+                    highestBox = $(this).height();
             });
+
+            $('.fancyTab a', this).height(highestBox);
+
         });
-                      //# sourceURL=pen.js
-    </script>
-    @Scripts.Render("~/bundles/books-gallery")
+    });
+    //# sourceURL=pen.js
+</script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#datepicker").datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            orientation: "bottom"
+        }).on("changeDate", function () {
+        })
+    });
+</script>
+
+@Scripts.Render("~/bundles/books-gallery")
 
 

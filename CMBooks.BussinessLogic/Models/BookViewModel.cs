@@ -36,6 +36,7 @@ namespace CMBooks.BusinessLogic.Models
                 Pages = this.Pages,
                 Description = this.Description,
                 Genre = this.Genre,
+                PictureUrl = this.PictureUrl
             };
         }
     }
