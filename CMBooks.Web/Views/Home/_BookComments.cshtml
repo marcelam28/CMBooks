@@ -1,0 +1,13 @@
+﻿@*@model List<CMBooks.BusinessLogic.Models.CommentModel>*@
+@model CMBooks.BusinessLogic.Models.BookViewModel
+
+@if (Model.Comments != null)
+{
+    foreach (var comment in Model.Comments)
+    {
+    <div>
+        <p><strong>@comment.UserName</strong>  @comment.AddedAt</p>
+        <p>@comment.Comment1</p>
+    </div>
+    }
+}

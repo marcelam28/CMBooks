@@ -1,0 +1,58 @@
+﻿@model IList<CMBooks.BusinessLogic.Models.BookViewModel>
+
+
+@foreach (var book in Model)
+{
+    <div class="book-container">
+        <div class="book-image">
+            <img src="@book.PictureUrl" id="@book.Id" onclick="showDetailsModal('@book.Id')">
+        </div>
+        <div class="book-text">
+            <h4 style="margin-top:5px;">@book.Title (@book.Author)</h4>
+            <p>| @book.Genre</p>
+
+            <span class="my-rating-@book.Id"></span>
+            <div style="margin-top:15px;font-size:15px;max-width:90%">
+                <p class="book-description"> @book.Description</p>
+            </div>
+        </div>
+    </div>
+}
+
+   <script type="text/javascript">
+
+       var myArray = [];
+       debugger
+    @foreach (var book in Model)
+    {
+        @:myArray.push({"BookId":"@book.Id", "Rate":"@book.Rate"});
+    }
+       myArray.map((book) => {
+           $(".my-rating-" + book.BookId).starRating({
+               initialRating: book.Rate,
+               strokeColor: '#894A00',
+               strokeWidth: 10,
+               starSize: 25,
+               callback: function (currentRating, $el) {
+                   var postData = {
+                       "UserId": "@Session["UserId"]",
+                       "BookId": book.BookId,
+                       "Rate1": currentRating
+                   }
+                   AjaxHelper.post("Rate/CreateRate", postData,
+                       function (response) {
+                           debugger
+                       },
+                       function () {
+                           debugger
+                       }
+                   )
+                   alert('rated ' + currentRating + 'id ' + book.BookId);
+                   console.log('DOM element ', $el);
+               }
+           });
+       })
+       
+    </script>
+    
+

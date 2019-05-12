@@ -45,7 +45,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -156,11 +162,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AzureHelper.cs" />
     <Compile Include="Helpers\Md5Helper.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\books-gallery.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -168,12 +176,15 @@
     <Content Include="Content\easy-loading.css" />
     <Content Include="Content\easy-loading.min.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\star-rating-svg.css" />
+    <Content Include="Content\tabs.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AjaxHelper.js" />
+    <Content Include="Scripts\books-gallery.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -186,7 +197,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.star-rating-svg.js" />
+    <Content Include="Scripts\jquery.validate-vsdo.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -213,6 +225,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Home\_BooksGallery.cshtml" />
+    <Content Include="Views\Home\_BookDetails.cshtml" />
+    <Content Include="Views\Home\_BookComments.cshtml" />
+    <Content Include="Views\Home\_AddBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -250,6 +266,10 @@
     <ProjectReference Include="..\Deventure.BusinessLogic\Deventure.BusinessLogic.csproj">
       <Project>{16B85C8D-AB4C-47A7-81B3-B16F0DA0DCA4}</Project>
       <Name>Deventure.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deventure.DataLayer\Deventure.DataLayer.EF.csproj">
+      <Project>{4228FC32-9A6F-48C5-9947-A118A93E144A}</Project>
+      <Name>Deventure.DataLayer.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

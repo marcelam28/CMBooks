@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CMBooks.Web.Helpers;
 
 namespace CMBooks.Web.Controllers
 {
@@ -16,6 +17,9 @@ namespace CMBooks.Web.Controllers
         [HttpPost]
         public JsonResult CreateBook(BookViewModel book)
         {
+            var file = Request.Files["PictureUrl"];
+            var url = AzureHelper.Upload(file, "PictureUrl");
+            book.PictureUrl = url;
             var createdBook = BookCore.Create(book);
             return Json(createdBook);
         }

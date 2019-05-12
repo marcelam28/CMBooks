@@ -49,10 +49,12 @@
     <Compile Include="Cores\CommentCore.cs" />
     <Compile Include="Cores\RateCore.cs" />
     <Compile Include="Cores\UserCore.cs" />
-    <Compile Include="Models\RateViewModel.cs" />
-    <Compile Include="Models\CommentViewModel.cs" />
-    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Helpers\Converter.cs" />
     <Compile Include="Models\BookViewModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\CommentViewModel.cs" />
+    <Compile Include="Models\RateViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeManagement\DASConfigurator.cs" />
     <Compile Include="Workflow\Enum\UnitOfWorkMode.cs" />
