@@ -1582,8 +1582,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1598,13 +1598,13 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+    .container {
+        width: 970px;
+    }
 }
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -4016,7 +4016,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
   float: left;

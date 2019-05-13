@@ -55,7 +55,6 @@ h1, h2, h3, h4, h5, h6 {
         }*/
 
 .fancyTabs {
-    border-bottom: 2px solid #ddd;
     margin: 15px 0 0;
 }
 
@@ -86,8 +85,7 @@ li.fancyTab.active a {
 
 .fancyTabContent {
     border-color: transparent;
-    box-shadow: 0 -2px 0 -1px #fff, 0 0 0 1px #ddd;
-    padding: 30px 15px 15px;
+    padding: 15px 15px 15px;
     position: relative;
     background-color: #fff;
 }

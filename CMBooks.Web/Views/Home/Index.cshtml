@@ -10,83 +10,99 @@
 @Styles.Render("~/Content/books-gallery")
 @Styles.Render("~/Content/rating")
 @Styles.Render("~/Content/tabs")
+        @*background-color: #fde9d6;*@
+<style>
+    body {
+        background-image: url('../../Content/images/book-pages-books-pages-762686.gif');
+        background-size:cover;
+    }
+    .logo-container {
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        color: #fffaee;
+    }
+</style>
+<div style="width:100%; height:100%; ">
+    <div class="container" style="margin-bottom:50px">
+        <div class="main">
+            <div class="">
+                <img src="~/Content/images/open-book.png" style="height:50px; display:inline-block" />
+                <h1 style="display:inline-block;vertical-align: middle;color:#fbf0db">CMBooks</h1>
+                <p  style="float:right;vertical-align: middle;color:#fbf0db; font-size:15px;margin-left:5px;margin-top: 20px">Logout</p>
+                <p onclick="showAddBookModal()" style="float:right;vertical-align: middle;color:#fbf0db; font-size:15px;margin-top: 20px">Add book</p>
+            </div>
+            <hr class="hr-style">
+        </div>
+        <section id="fancyTabWidget" class="tabs t-tabs">
+            <ul class="nav nav-tabs fancyTabs" role="tablist">
 
-<div class="container">
-    <div class="main">
+                <li class="tab fancyTab active">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('')" id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
 
-        <h1>MYLOGO.COM</h1>
-        <hr class="hr-style">
-    </div>
-    <section id="fancyTabWidget" class="tabs t-tabs">
-        <ul class="nav nav-tabs fancyTabs" role="tablist">
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Romantic')" id="tab1" href="#tabBody0" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
 
-            <li class="tab fancyTab active">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('')" id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Romantic')" id="tab1" href="#tabBody0" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
+                    <div class="whiteBlock"></div>
+                </li>
+                @*<li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a id="tab5" onclick="showAddBookModal()" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-plus-circle"></span><span class="hidden-xs">Add book</span></a>
+                    <div class="whiteBlock"></div>
+                </li>*@
+            </ul>
+            <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite" style="background-color:transparent">
+                <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
+                    <div>
+                        <div class="row">
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
-                <div class="whiteBlock"></div>
-            </li>
-
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
-                <div class="whiteBlock"></div>
-            </li>
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a id="tab5" onclick="showAddBookModal()" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-plus-circle"></span><span class="hidden-xs">Add book</span></a>
-                <div class="whiteBlock"></div>
-            </li>
-        </ul>
-        <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
-            <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
-                <div>
-                    <div class="row">
-
-                        <div class="col-md-12">
-                            <div class="middle" style="background-color:#bbb;">
+                            <div class="col-md-12" style="padding:0px;padding-right: 5px;">
                                 <div id="partial-view">
                                     @Html.Partial("_BooksGallery", Model)
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
-<div id="book-details-container">
-    @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
-</div>
+    <div id="book-details-container">
+        @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
+    </div>
 
-<div id="add-book-container">
-    @Html.Partial("_AddBook", new CMBooks.BusinessLogic.Models.BookViewModel())
+    <div id="add-book-container">
+        @Html.Partial("_AddBook", new CMBooks.BusinessLogic.Models.BookViewModel())
+    </div>
 </div>
 <script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'>
 </script>

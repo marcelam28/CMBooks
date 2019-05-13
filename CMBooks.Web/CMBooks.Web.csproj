@@ -175,6 +175,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\easy-loading.css" />
     <Content Include="Content\easy-loading.min.css" />
+    <Content Include="Content\images\blur-book-stack-books-590493.jpg" />
+    <Content Include="Content\images\book-pages-books-pages-762686.gif" />
+    <Content Include="Content\images\book-pages-books-pages-762686.jpg" />
+    <Content Include="Content\images\open-book.png" />
+    <Content Include="Content\images\pexels-photo-2.jpeg" />
     <Content Include="Content\login.css" />
     <Content Include="Content\star-rating-svg.css" />
     <Content Include="Content\tabs.css" />

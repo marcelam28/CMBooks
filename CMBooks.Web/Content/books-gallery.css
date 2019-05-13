@@ -84,12 +84,14 @@ body {
 }
 
 .book-container {
-    width: 70%;
+    width: 100%;
+    padding: 15px;
+    margin-top:15px;
+    border-radius:4px;
     display: inline-block;
-    border: solid 1px #D3D3D3;
+    background-color: white;
 }
 .book-container:hover{
-    border: solid 1px black;
 }
 
     .book-container img {
@@ -160,6 +162,10 @@ body {
     -ms-transform: translate3d(0%, 0, 0);
     -o-transform: translate3d(0%, 0, 0);
     transform: translate3d(0%, 0, 0);
+}
+
+.add-book-modal{
+    width: 420px !important;
 }
 
 .modal.left .modal-content,
