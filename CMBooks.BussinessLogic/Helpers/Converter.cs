@@ -42,10 +42,11 @@ namespace CMBooks.BussinessLogic.Helpers
                 foreach(DataLayer.Comment c in bookDL.Comments)
                 {
                     CommentModel newComment = new CommentModel();
-                    
+                    newComment.Id = c.Id;
                     newComment.Comment1 = c.Comment1;
                     newComment.AddedAt = c.AddedAt;
                     newComment.UserName = c.User.FirstName;
+                    newComment.Status = c.Status;
                     comments.Add(newComment);
                     
                 }

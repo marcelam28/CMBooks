@@ -42,6 +42,10 @@ namespace CMBooks.Web.Controllers
             {
                 return Json(ResponseFactory.Error(ResponseCode.ErrorInvalidPassword), JsonRequestBehavior.AllowGet);
             }
+            if(user.IsAdmin == true)
+            {
+                Session["isAdmin"] = true;
+            }
             Session["userId"] = user.Id;
             return Json(response);
         }

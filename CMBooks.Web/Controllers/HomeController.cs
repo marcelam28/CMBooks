@@ -2,6 +2,7 @@
 using CMBooks.BussinessLogic.Cores;
 using CMBooks.BussinessLogic.Helpers;
 using CMBooks.Models;
+using Deventure.DataLayer.EF.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,27 +48,13 @@ namespace CMBooks.Web.Controllers
             }
             else
             {
-                book = BookCore.Get(id, new[] { nameof(Book.Rates),
+                book = BookCore.GetSingle(b => b.Id == id, new[] { nameof(Book.Rates),
                                                  $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"});
             }
             BookViewModel bookVM = DLtoModelsConvertor.ConvertBookDLIntoBookVM(book);
+            bookVM.Comments = bookVM.Comments.Where(c => c.Status == EntityStatus.Active).ToList();
             return PartialView("~/Views/Home/_BookDetails.cshtml", bookVM);
         }
-
-        //public PartialViewResult GetBookComments(Guid id)
-        //{
-        //    DataLayer.Book book;
-        //    if (id == Guid.Empty)
-        //    {
-        //        return null;
-        //    }
-        //    else
-        //    {
-        //        book = BookCore.Get(id, new[] { nameof(Book.Rates), nameof(Book.Comments) });
-        //    }
-        //    BookViewModel bookVM = DLtoModelsConvertor.ConvertBookDLIntoBookVM(book);
-        //    return PartialView("~/Views/Home/_BookComments.cshtml", bookVM.Comments);
-        //}
 
         public ActionResult About()
         {

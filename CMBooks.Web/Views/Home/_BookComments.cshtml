@@ -5,9 +5,30 @@
 {
     foreach (var comment in Model.Comments)
     {
-    <div>
+    <div id="comment-container-@comment.Id">
         <p><strong>@comment.UserName</strong>  @comment.AddedAt</p>
         <p>@comment.Comment1</p>
+        @if(Session["isAdmin"] != null && Session["isAdmin"].ToString() == "true"){
+            <p onclick="deleteComment('@comment.Id')">Delete</p>
+        }
     </div>
     }
 }
+
+<script>
+    function deleteComment(id) {
+        EasyLoading.show();
+        AjaxHelper.post("Comment/DeleteComment?commentId=" + id,
+            {},
+            function () {
+                $("#comment-container-" + id).remove();
+                EasyLoading.hide();
+                toastr.success("Comment deleted successfully!");
+            },
+            function () {
+                EasyLoading.hide();
+                toastr.error("An error occured when deleting the comment!");
+            }
+        )
+    }
+</script>
