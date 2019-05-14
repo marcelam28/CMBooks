@@ -1,79 +1,8 @@
 ﻿@model CMBooks.BusinessLogic.Models.BookViewModel
 @Styles.Render("~/Content/login")
+@Styles.Render("~/Content/add-book")
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<style>
-    /*datepicker*/
-    .datepicker {
-        display: block;
-        width: 100%;
-        background: transparent;
-        font-family: Montserrat-Regular;
-        font-size: 18px;
-        color: #555555;
-        line-height: 1.2;
-        padding: 0 26px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #462c14;
-    }
 
-    .datepicker-label {
-        font-family: Montserrat-Regular;
-        font-size: 13px;
-        color: #999999;
-        line-height: 1.2;
-        display: block;
-        position: absolute;
-        pointer-events: none;
-        width: 100%;
-        padding-left: 24px;
-        left: 0;
-        top: 14px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        transition: all 0.4s;
-    }
-
-    .genre {
-        width: -webkit-fill-available;
-        border: 0px;
-        background-color: transparent;
-        border-bottom: 1px solid #462c14;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        font-size: 18px;
-        outline: 0px;
-    }
-
-    .genre-label, .photo-label {
-        font-family: Montserrat-Regular;
-        font-size: 13px;
-        color: #999999;
-        line-height: 1.2;
-        display: block;
-        position: absolute;
-        pointer-events: none;
-        width: 100%;
-        padding-left: 24px;
-        left: 0;
-        top: 14px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        transition: all 0.4s;
-    }
-    .add-photo {
-        height: 75px;
-        width: 100%;
-        padding-bottom: 11px;
-        font-size: 17px;
-        border-radius: 0px;
-    }
-
-    .add-input{
-        height:75px;
-    }
-</style>
 <div class="modal right fade" id="add-book" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog add-book-modal" role="document">
         <div class="modal-content" style="height:auto">
@@ -102,7 +31,7 @@
                                 </div>
 
                                 <div class="wrap-input100 validate-input add-input">
-                                    <input class="datepicker" type="text" name="publication-date" readonly value=@DateTime.Now.AddYears(-200) id="datepicker">
+                                    <input class="datepicker" type="text" name="publication-date"  value=@DateTime.Now.AddYears(-200) id="datepicker">
                                     <span class="focus-input100"></span>
                                     <span class="datepicker-label">Publication date</span>
                                 </div>
@@ -114,7 +43,7 @@
                                 </div>
 
                                 <div class="wrap-input100 validate-input add-input">
-                                    <textarea class="input100" name="description" id="description"  maxlength="1024"></textarea>
+                                    <textarea class="input100" name="description" id="description" maxlength="1024"></textarea>
                                     <span class="focus-input100"></span>
                                     <span class="label-input100">Description</span>
                                 </div>
@@ -144,60 +73,9 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-    </div><!-- modal -->
+            </div>
+        </div>
+    </div>
 </div>
-<script>
-    function addBook()
-    {
-        debugger;
-        EasyLoading.show();
-        var title = $("#title").val();
-        var author = $("#author").val();
-        var publicationDate = $('#datepicker').val();
-        var pages = $("#pages").val();
-        var description = $("#description").val();
-        var genre = $('#genre').val();
-        var photo = document.getElementById("image-file").files[0];
 
-        var formData = new FormData();
-        formData.append("Title", title);
-        formData.append("Author", author);
-        formData.append("PublicationDate", publicationDate);
-        formData.append("Pages", pages);
-        formData.append("Description", description);
-        formData.append("Genre", genre);
-        formData.append("PictureUrl", photo);
-       
-        AjaxHelper.postFile("Book/CreateBook",
-            formData,
-            function (response) {
-                EasyLoading.hide();
-                if (response.Success == true) {
-                    if (response.StatusCode == 1) {
-                        toastr.success("Book added successfully!");
-                        $("#add-book").modal('hide');
-                        $("#title").val('');
-                        $("#author").val('');
-                        $('#datepicker').val('');
-                        $("#pages").val('');
-                        $("#description").val('');
-                        $('#genre').val('');
-                        
-                    }
-                }
-                else {
-                    if (response.StatusCode == -6) {
-                        toastr.error("Error adding book!");
-                    }
-                    
-                }
-            },
-            function () {
-                EasyLoading.hide();
-                toastr.error("Unable to cadd book!");
-            }
-        )
-    }
-</script>
+@Scripts.Render("~/bundles/add-book")

@@ -1,0 +1,72 @@
+﻿/*datepicker*/
+.datepicker {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.2;
+    padding: 0 26px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #462c14;
+}
+
+.datepicker-label {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.2;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    padding-left: 24px;
+    left: 0;
+    top: 14px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.genre {
+    width: -webkit-fill-available;
+    border: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid #462c14;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: 0px;
+}
+
+.genre-label, .photo-label {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.2;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    padding-left: 24px;
+    left: 0;
+    top: 14px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.add-photo {
+    height: 75px;
+    width: 100%;
+    padding-bottom: 11px;
+    font-size: 17px;
+    border-radius: 0px;
+}
+
+.add-input {
+    height: 75px;
+}

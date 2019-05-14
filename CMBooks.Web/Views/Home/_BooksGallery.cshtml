@@ -1,7 +1,7 @@
-﻿@model IList<CMBooks.BusinessLogic.Models.BookViewModel>
+﻿@model CMBooks.BussinessLogic.Models.BookVMPaginationModel
 
 
-@foreach (var book in Model)
+@foreach (var book in Model.Books)
 {
     <div class="book-container">
         <div class="book-image">
@@ -17,13 +17,55 @@
             </div>
         </div>
     </div>
+
+}
+@if (Model.TotalItems > 3)
+{
+<div style="background-color:white" id="light-pagination" class="pagination light-theme simple-pagination">
+
+</div>
 }
 
-   <script type="text/javascript">
+<script type="text/javascript">
+        $(function () {
+            debugger
+            $("#light-pagination").pagination({
+                items: @Model.TotalItems,
+                itemsOnPage: 3,
+                cssStyle: 'light-theme',
+                selectOnClick: false,
+                currentPage: @Model.Page,
+                onPageClick: (pag_nr, ev) => {
+                    debugger
+                    EasyLoading.show();
+                    var activeTabId = $(".tabs .nav-tabs li.fancyTab.active a")[0].id;
+                    AjaxHelper.getViewWithoutData(
+                        "Home/GetPage?pagNr=" + pag_nr + "&genre=" + activeTabId,
+                        function (result) {
+                            debugger
+                            if (result != null) {
+                                $("#partial-view").html(result);
+
+                                $("#light-pagination").pagination({
+                                    items: @Model.TotalItems,
+                                })
+                                EasyLoading.hide();
+                              }
+                        },
+                        function (result) {
+                            debugger
+                            EasyLoading.hide();
+                            toastr.error("An error occured while getting the data!");
+                        }
+                    );
+                }
+            });
+        });
+
 
        var myArray = [];
        debugger
-    @foreach (var book in Model)
+    @foreach (var book in Model.Books)
     {
         @:myArray.push({"BookId":"@book.Id", "Rate":"@book.Rate"});
     }
@@ -52,7 +94,7 @@
                }
            });
        })
-       
-    </script>
-    
+
+</script>
+
 

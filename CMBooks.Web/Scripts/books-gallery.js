@@ -34,4 +34,19 @@ function showAddBookModal() {
     EasyLoading.hide();
 }
 
+function deleteComment(id) {
+	EasyLoading.show();
+	AjaxHelper.post("Comment/DeleteComment?commentId=" + id,
+		{},
+		function () {
+			$("#comment-container-" + id).remove();
+			EasyLoading.hide();
+			toastr.success("Comment deleted successfully!");
+		},
+		function () {
+			EasyLoading.hide();
+			toastr.error("An error occured when deleting the comment!");
+		}
+	)
+}
 

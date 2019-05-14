@@ -1,6 +1,7 @@
 ﻿using CMBooks.BusinessLogic.Models;
 using CMBooks.BussinessLogic.Cores;
 using CMBooks.BussinessLogic.Helpers;
+using CMBooks.BussinessLogic.Models;
 using CMBooks.Models;
 using Deventure.DataLayer.EF.Enums;
 using System;
@@ -16,27 +17,54 @@ namespace CMBooks.Web.Controllers
         {
             var books = BookCore.GetAll(new[] { nameof(Book.Rates),
                                                 $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"
-            });
-            List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
+            }).OrderBy(book => book.Title).ToList();
 
-            return View(booksVMList);
+            List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
+            var pageElements = booksVMList.Skip(0).Take(3);
+
+            BookVMPaginationModel paginationResult = new BookVMPaginationModel()
+            {
+                TotalItems = booksVMList.Count,
+                Books = pageElements,
+                Page = 0
+            };
+
+            return View(paginationResult);
         }
 
         public PartialViewResult Filter(string genre)
         {
+            return GetPage(1, genre);
+
+        }
+
+        public PartialViewResult GetPage(int pagNr, string genre)
+        {
             IList<DataLayer.Book> books;
-            if (string.IsNullOrWhiteSpace(genre))
+
+            if (string.IsNullOrEmpty(genre) || genre == "All")
             {
-                books = BookCore.GetAll();
+                books = BookCore.GetAll().OrderBy(book => book.Title).ToList();
             }
             else
             {
                 books = BookCore.GetList(b => b.Genre == genre, new[] { nameof(Book.Rates) ,
-                                                                $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"});
+                                                                $"{nameof(Book.Comments)}.{nameof(DataLayer.Comment.User)}"}).OrderBy(book => book.Title).ToList();
             }
             List<BookViewModel> booksVMList = DLtoModelsConvertor.ConvertBookDLIntoBookVM(books);
 
-            return PartialView("~/Views/Home/_BooksGallery.cshtml", booksVMList);
+            IEnumerable<BookViewModel> pageElements = null;
+
+            pageElements = booksVMList.Skip(3 * pagNr - 3).Take(3);
+
+            BookVMPaginationModel paginationResult = new BookVMPaginationModel()
+            {
+                TotalItems = booksVMList.Count,
+                Books = pageElements,
+                Page = pagNr
+            };
+
+            return PartialView("~/Views/Home/_BooksGallery.cshtml", paginationResult);
         }
 
         public PartialViewResult GetBookDetails(Guid id)

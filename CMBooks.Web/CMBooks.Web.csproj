@@ -168,6 +168,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\add-book.css" />
     <Content Include="Content\books-gallery.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -181,6 +182,7 @@
     <Content Include="Content\images\open-book.png" />
     <Content Include="Content\images\pexels-photo-2.jpeg" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\simplePagination.css" />
     <Content Include="Content\star-rating-svg.css" />
     <Content Include="Content\tabs.css" />
     <Content Include="Content\toastr.css" />
@@ -188,6 +190,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\add-book.js" />
     <Content Include="Scripts\AjaxHelper.js" />
     <Content Include="Scripts\books-gallery.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -202,6 +205,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.simplePagination.js" />
     <Content Include="Scripts\jquery.star-rating-svg.js" />
     <Content Include="Scripts\jquery.validate-vsdo.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -225,8 +229,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
