@@ -190,6 +190,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\book-details.js" />
     <Content Include="Scripts\add-book.js" />
     <Content Include="Scripts\AjaxHelper.js" />
     <Content Include="Scripts\books-gallery.js" />

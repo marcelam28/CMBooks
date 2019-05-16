@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="column image-details">
-                        <img src="@Model.PictureUrl" style="max-height:300px;max-width:100%;text-align: center">
+                        <img src="@Model.PictureUrl" style="max-height: 300px;max-width: 100%;box-shadow: 0 5px 35px 0 #92908a">
                     </div>
                     <div class="column description-details">
                         <div style="display:inline-block;width: 100%; ">
@@ -28,30 +28,42 @@
                                 <span class="my-rating" data-rating="@Model.Rate"></span>
                             </div>
                         </div>
-                            <h4>
-                                Genre:
-                            </h4>
-                            <p>
-                                @Model.Genre
-                            </p>
-                            <h4>
-                                Description
-                            </h4>
-                            <p style="overflow:hidden;">
-                                @Model.Description
-                            </p>
-                        
+                        <h4>
+                            Genre:
+                        </h4>
+                        <p>
+                            @Model.Genre
+                        </p>
+                        <h4>
+                            Publication Date:
+                        </h4>
+                        <p>
+                            @Model.PublicationDate.ToString("yyyy-MM-dd")
+                        </p>
+                        <h4>
+                            Number of pages:
+                        </h4>
+                        <p>
+                            @Model.Pages
+                        </p>
+                        <h4>
+                            Description
+                        </h4>
+                        <p style="overflow:hidden;">
+                            @Model.Description
+                        </p>
+
                     </div>
                 </div>
                 <div class="comments">
                     <h4>
                         Comments
                     </h4>
-                    <textarea id="comment-@Model.Id" placeholder="Add your comment here..." cols="100" rows="5" style="width:100%"></textarea>
-                    <button type="button" onclick="addComment('comment-@Model.Id')" class="add-comment-button">Add</button>
-                    @*<button type="button" onclick="showComments('@Model.Id')">View comments</button>*@
-                    <div id="list-of-comments">
-                         @*@Html.Partial("_BookComments", new List<CMBooks.BusinessLogic.Models.CommentModel>())*@
+                    <div style="border-bottom:1px solid #6d3b10;margin-bottom:3px;">
+                    <textarea class="new-comment" id="comment-@Model.Id" placeholder="Add your comment here..." onkeyup="adjust_textarea(this)" cols="70" rows="1" ></textarea>
+                    </div>
+                    <button type="button" onclick="addComment('comment-@Model.Id','@Session["userName"]')" class="add-comment-button">Add</button>
+                    <div id="list-of-comments-@Model.Id">
                         @Html.Partial("_BookComments", Model)
                     </div>
                 </div>
@@ -60,49 +72,69 @@
         </div>
     </div>
 </div>
-
 <script>
-     $(".my-rating").starRating({
-               strokeColor: '#894A00',
-               strokeWidth: 10,
-               starSize: 25,
-               callback: function (currentRating, $el) {
-                   var postData = {
-                       "UserId": "@Session["UserId"]",
-                       "BookId": "@Model.Id",
-                       "Rate1": currentRating
-                   }
-                   AjaxHelper.post("Rate/CreateRate", postData,
-                       function (response) {
-                           debugger
-                       },
-                       function () {
-                           debugger
-                       }
-                   )
-               }
-    });
-    function addComment(commentId)
-    {
-        var comment = $('#' + commentId).val();
+    $(".my-rating").starRating({
+    strokeColor: '#894A00',
+    strokeWidth: 10,
+    starSize: 25,
+    callback: function (currentRating, $el) {
         var postData = {
             "UserId": "@Session["UserId"]",
             "BookId": "@Model.Id",
-            "Comment1": comment
+            "Rate1": currentRating
         }
-        if (comment != "") {
-            debugger;
-            AjaxHelper.post(
-                "Comment/CreateComment", postData,
-                function (response) {
-                    debugger
-                    toastr.success("Comment added!");
-                    $('#' + commentId).val('');
-                },
-                function () {
-                    debugger
-                }
-            )
-        }
+        AjaxHelper.post("Rate/CreateRate", postData,
+            function (response) {
+                toastr.success("Thank you for your rate!");
+                debugger
+            },
+            function () {
+                toastr.error("Unable to rate!");
+                debugger
+            }
+        )
+    }
+});
+function addComment(commentId, userName) {
+    debugger;
+    EasyLoading.show();
+    var comment = $('#' + commentId).val();
+    var postData = {
+        "UserId": "@Session["UserId"]",
+        "BookId": "@Model.Id",
+        "Comment1": comment
+    }
+    debugger;
+    if (comment != "") {
+        debugger;
+        AjaxHelper.post(
+            "Comment/CreateComment", postData,
+            function (response) {
+                debugger
+                $('#' + commentId).val('');
+                var id = "#list-of-comments-" + "@Model.Id";
+                var divNou = "<div class='comment-div'>" +
+                    "<p style='margin: 8px;font-size: 12px;' ><strong style='font-size:13px;color:black'>" + userName + "</strong> " + comment + "</p>" +
+                    "</div>" +
+                    "<p style='color:#707070;font-size:12px;padding-left: 7px; margin-top: 2px;'>" + response + "</p>";
+                $(id).append(divNou);
+                document.getElementById("no-comments").style.display = "none";
+                EasyLoading.hide();
+                toastr.success("Comment added!");
+            },
+            function () {
+                debugger
+                EasyLoading.hide();
+            }
+        )
+    }
+    else {
+        EasyLoading.hide();
+        toastr.error("You cannot leave the comment empty!");
+    }
+}
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight) + "px";
     }
 </script>

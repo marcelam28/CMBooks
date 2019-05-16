@@ -17,8 +17,9 @@ namespace CMBooks.Web.Controllers
         [HttpPost]
         public JsonResult CreateComment(CommentViewModel comment)
         {
+            comment.AddedAt = DateTime.Now;
             var createdComment = CommentCore.Create(comment);
-            return Json(createdComment);
+            return Json(comment.AddedAt.ToString());
         }
 
         [HttpPost]

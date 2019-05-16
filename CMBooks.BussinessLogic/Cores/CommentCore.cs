@@ -20,7 +20,6 @@ namespace CMBooks.BussinessLogic.Cores
 
             var comment = model.CopyTo();
             comment.Status = EntityStatus.Active;
-            comment.AddedAt = DateTime.Now;
             var createdComment = Create(comment);
             
             if (createdComment == null)

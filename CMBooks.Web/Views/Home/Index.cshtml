@@ -65,8 +65,11 @@
             <div>
                 <img src="~/Content/images/open-book.png" class="logo" />
                 <h1 class="title">CMBooks</h1>
-                <p class="menu-item"> | Logout</p>
-                <p onclick="showAddBookModal()" class="menu-item">Add book</p>
+                <a onclick="logOut()" class="menu-item"> | Logout</a>
+                @if (Session["isAdmin"] != null && Session["isAdmin"].ToString().ToLower() == "true")
+                {
+                    <p onclick="showAddBookModal()" class="menu-item">Add book</p>
+                }
             </div>
             <hr class="hr-style">
         </div>
@@ -197,9 +200,25 @@
 
         });
     });
-    </script>
+</script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script>
+    function logOut() {
+        debugger
+        EasyLoading.show();
+        AjaxHelper.post(
+            "Account/LogOut", null,
+            function (response) {
+                debugger
+                window.location = "http://localhost:62402/Account/Index";
+            },
+            function () {
+                debugger
+            }
+        );
+        EasyLoading.hide();
+    }
+</script>
 @Scripts.Render("~/bundles/books-gallery")
 
 

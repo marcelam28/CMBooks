@@ -41,6 +41,8 @@ namespace CMBooks.Web
                         "~/Scripts/jquery.simplePagination.js"));
             bundles.Add(new ScriptBundle("~/bundles/add-book").Include(
                         "~/Scripts/add-book.js"));
+            bundles.Add(new ScriptBundle("~/bundles/book-details").Include(
+                        "~/Scripts/book-details.js"));
             #endregion
 
             #region StyleBundles
