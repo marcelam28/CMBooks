@@ -1,13 +1,35 @@
-﻿@*@model List<CMBooks.BusinessLogic.Models.CommentModel>*@
-@model CMBooks.BusinessLogic.Models.BookViewModel
-
+﻿@model CMBooks.BusinessLogic.Models.BookViewModel
+<style>
+    .comment-div {
+        border-radius: 20px;
+        border: 1px solid #ebebeb;
+        background-color: #ebebeb;
+        padding: 0px;
+    }
+</style>
 @if (Model.Comments != null)
 {
-    foreach (var comment in Model.Comments)
+    if (Model.Comments.Count > 0)
     {
-    <div>
-        <p><strong>@comment.UserName</strong>  @comment.AddedAt</p>
-        <p>@comment.Comment1</p>
-    </div>
+        foreach (var comment in Model.Comments)
+        {
+
+            <div id="comment-container-@comment.Id">
+                <div class="comment-div">
+                    <p style="margin: 8px;font-size: 12px;"><strong style="font-size:13px;color:black">@comment.UserName</strong> @comment.Comment1</p>
+                </div>
+            <p style="color:#707070;font-size:12px;padding-left: 7px; margin-top: 2px;">@comment.AddedAt</p>
+                @if (Session["isAdmin"] != null && Session["isAdmin"].ToString().ToLower() == "true")
+                {
+                    <p onclick="deleteComment('@comment.Id')" style="padding-left:8px">Delete</p>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <div id="no-comments" >
+        <p style="color:#707070;font-size:12px">No comments...</p>
+       </div>
     }
 }

@@ -1,5 +1,7 @@
-﻿@model IList<CMBooks.BusinessLogic.Models.BookViewModel>
+﻿@model CMBooks.BussinessLogic.Models.BookVMPaginationModel
 @{
+    /**/
+
     ViewBag.Title = "Home Page";
     if (Session["UserId"] == null)
     {
@@ -11,63 +13,106 @@
 @Styles.Render("~/Content/rating")
 @Styles.Render("~/Content/tabs")
 
-<div class="container">
-    <div class="main">
+<style>
+    body {
+        background-image: url('../../Content/images/book-pages-books-pages-762686.gif');
+        background-size: cover;
+    }
 
-        <h1>MYLOGO.COM</h1>
-        <hr class="hr-style">
-    </div>
-    <section id="fancyTabWidget" class="tabs t-tabs">
-        <ul class="nav nav-tabs fancyTabs" role="tablist">
+    .logo-container {
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        color: #fffaee;
+    }
 
-            <li class="tab fancyTab active">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('')" id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+    .container {
+        margin-bottom: 50px;
+    }
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Romantic')" id="tab1" href="#tabBody0" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+    .content-container {
+        width: 100%;
+        height: 100%;
+    }
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+    .logo {
+        height: 50px;
+        display: inline-block;
+    }
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+    .title {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fbf0db;
+    }
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
-                <div class="whiteBlock"></div>
-            </li>
+    .menu-item {
+        float: right;
+        color: #fbf0db;
+        font-size: 15px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
 
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a id="tab5" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
-                <div class="whiteBlock"></div>
-            </li>
-            <li class="tab fancyTab">
-                <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-                <a id="tab5" onclick="showAddBookModal()" href="#tabBody0" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0"><span class="fa fa-plus-circle"></span><span class="hidden-xs">Add book</span></a>
-                <div class="whiteBlock"></div>
-            </li>
-        </ul>
-        <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
-            <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
-                <div>
-                    <div class="row">
+    #myTabContent {
+        background-color: transparent
+    }
+</style>
 
-                        <div class="col-md-12">
-                            <div class="middle" style="background-color:#bbb;">
+<div class="content-container">
+    <div class="container">
+        <div class="main">
+            <div>
+                <img src="~/Content/images/open-book.png" class="logo" />
+                <h1 class="title">CMBooks</h1>
+                <a onclick="logOut()" class="menu-item"> | Logout</a>
+                @if (Session["isAdmin"] != null && Session["isAdmin"].ToString().ToLower() == "true")
+                {
+                    <p onclick="showAddBookModal()" class="menu-item">Add book</p>
+                }
+            </div>
+            <hr class="hr-style">
+        </div>
+        <section id="fancyTabWidget" class="tabs t-tabs">
+            <ul class="nav nav-tabs fancyTabs" role="tablist">
+
+                <li class="tab fancyTab active">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('')" id="All" href="#tabBody0" role="tab" data-toggle="tab"><span class="fa fa-book"></span><span class="hidden-xs">All</span></a>
+                </li>
+
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Romantic')" id="Romantic" href="#tabBody0" role="tab" data-toggle="tab"><span class="fa fa-heart"></span><span class="hidden-7">Romance</span></a>
+                </li>
+
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Drama')" id="tab2" href="#tabBody0" role="tab" data-toggle="tab"><span class="fa fa-theater-masks"></span><span class="hidden-xs">Drama</span></a>
+                </li>
+
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Horror')" id="tab3" href="#tabBody0" role="tab" data-toggle="tab"><span class="fas fa-broom fa"></span><span class="hidden-7">Horror</span></a>
+                </li>
+
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Mistery')" id="tab4" href="#tabBody0" role="tab" data-toggle="tab"><span class="fa fas fa-search"></span><span class="hidden-xs">Mistery</span></a>
+                </li>
+
+                <li class="tab fancyTab">
+                    <div class="arrow-down"><div class="arrow-down-inner"></div></div>
+                    <a onclick="filter('Fantastic')" id="tab5" href="#tabBody0" role="tab" data-toggle="tab"><span class="fas fa-dragon fa"></span><span class="hidden-xs">Fantastic</span></a>
+                </li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
+                <div class="tab-pane  fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" aria-hidden="false" tabindex="0">
+                    <div>
+                        <div class="row">
+
+                            <div class="col-md-12" style="padding:0px;padding-right: 0px;">
                                 <div id="partial-view">
                                     @Html.Partial("_BooksGallery", Model)
                                 </div>
@@ -77,16 +122,17 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
-<div id="book-details-container">
-    @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
-</div>
+    <div id="book-details-container">
+        @Html.Partial("_BookDetails", new CMBooks.BusinessLogic.Models.BookViewModel())
+    </div>
 
-<div id="add-book-container">
-    @Html.Partial("_AddBook", new CMBooks.BusinessLogic.Models.BookViewModel())
+    <div id="add-book-container">
+        @Html.Partial("_AddBook", new CMBooks.BusinessLogic.Models.BookViewModel())
+    </div>
+
 </div>
 <script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'>
 </script>
@@ -95,7 +141,6 @@
 <script id="rendered-js">
 
     $(document).ready(function () {
-
         var numItems = $('li.fancyTab').length;
 
         if (numItems == 12) {
@@ -131,6 +176,13 @@
         if (numItems == 2) {
             $("li.fancyTab").width('50%');
         }
+
+        $("#datepicker").datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            orientation: "bottom"
+        }).on("changeDate", function () {
+        })
     });
 
     $(window).load(function () {
@@ -148,21 +200,26 @@
 
         });
     });
-    //# sourceURL=pen.js
 </script>
-
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#datepicker").datepicker({
-            format: "dd/mm/yyyy",
-            autoclose: true,
-            orientation: "bottom"
-        }).on("changeDate", function () {
-        })
-    });
+    function logOut() {
+        debugger
+        EasyLoading.show();
+        AjaxHelper.post(
+            "Account/LogOut", null,
+            function (response) {
+                debugger
+                window.location = "http://localhost:62402/Account/Index";
+            },
+            function () {
+                debugger
+            }
+        );
+        EasyLoading.hide();
+    }
 </script>
-
 @Scripts.Render("~/bundles/books-gallery")
+
 
 

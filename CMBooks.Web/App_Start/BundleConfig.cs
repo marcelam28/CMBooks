@@ -37,6 +37,12 @@ namespace CMBooks.Web
                         "~/Scripts/books-gallery.js"));
             bundles.Add(new ScriptBundle("~/bundles/rating").Include(
                         "~/Scripts/jquery.star-rating-svg.js"));
+            bundles.Add(new ScriptBundle("~/bundles/pagination").Include(
+                        "~/Scripts/jquery.simplePagination.js"));
+            bundles.Add(new ScriptBundle("~/bundles/add-book").Include(
+                        "~/Scripts/add-book.js"));
+            bundles.Add(new ScriptBundle("~/bundles/book-details").Include(
+                        "~/Scripts/book-details.js"));
             #endregion
 
             #region StyleBundles
@@ -56,6 +62,10 @@ namespace CMBooks.Web
                        "~/Content/star-rating-svg.css"));
             bundles.Add(new StyleBundle("~/Content/tabs").Include(
                        "~/Content/tabs.css"));
+            bundles.Add(new StyleBundle("~/Content/pagination").Include(
+                       "~/Content/simplePagination.css"));
+            bundles.Add(new StyleBundle("~/Content/add-book").Include(
+                       "~/Content/add-book.css"));
             #endregion
 
         }

@@ -613,12 +613,12 @@ namespace Deventure.BusinessLogic.Core
             }
         }
 
-        public static TModel Update(TDataAccessModel entity, bool refreshFromDb = false, IList<string> navigationProperties = null)
+        public static TDataAccessModel Update(TDataAccessModel entity, bool refreshFromDb = false, IList<string> navigationProperties = null)
         {
             using (var repository = RepoUnitOfWork.CreateTrackingRepository<TRepo>())
             {
                 entity = repository.Update(entity, refreshFromDb, navigationProperties);
-                return entity.CopyTo<TModel>();
+                return entity;
             }
         }
 

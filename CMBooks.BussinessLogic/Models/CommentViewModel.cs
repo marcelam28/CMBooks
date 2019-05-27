@@ -12,15 +12,18 @@ namespace CMBooks.BusinessLogic.Models
 
         public string Comment1 { get; set; }
 
+        public DateTime AddedAt { get; set; }
+
         public DataLayer.Comment CopyTo()
         {
-            
+
             return new DataLayer.Comment()
             {
                 Id = this.Id,
                 UserId = this.UserId,
                 BookId = this.BookId,
-                Comment1 = this.Comment1
+                Comment1 = this.Comment1,
+                AddedAt = this.AddedAt
             };
         }
     }

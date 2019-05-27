@@ -1,17 +1,4 @@
-﻿/* Side navigation links */
-.filter-button {
-    color: black;
-    padding: 13px;
-    text-decoration: none;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 2px;
-    background-color:transparent;
-    border:transparent;
-    font-size:17px;
-}
-
- /*Change color on hover */
+﻿ /*Change color on hover */
 button:hover {
     background-color: #FFF8DC;
     color: black;
@@ -26,70 +13,15 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the header */
-.header {
-    grid-area: header;
-    background-color: #008B8B;
-    /*padding:10px;*/
-    text-align: center;
-    background-image: linear-gradient(-90deg,#FFF8DC, #008B8B);
-    height:50px;
-}
-
-/* The grid container */
-.grid-container {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    grid-template-rows: 50px 1fr 30px;
-    grid-template-areas: 'header header header header header header ' ' left middle middle middle middle middle';
-    grid-template-columns: 150px 1fr;
-    grid-template-rows: 80px 1fr;
-    grid-template-columns: 150px 1fr;
-    /* grid-column-gap: 10px; - if you want gap between the columns */
-}
-
-.left,
-.middle,
-.right {
-    padding:5px;
-}
-
-/* Style the left column */
-.left {
-    grid-area: left;
-    /*margin-top: 5px;*/
-    background-color: #008B8B !important;
-    /*background-image: linear-gradient(#008B8B, #FFF8DC );*/
-}
-
-/* Style the middle column */
-.middle {
-    grid-area: middle;
-    background-color:white !important;
-}
-
-/* Style the right column */
-.right {
-    grid-area: right;
-}
-
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 700px) {
-    .grid-container {
-        grid-template-areas: 'header header header header header header' 'left left left left left left' 'middle middle middle middle middle middle' ;
-    }
-}
-
 .book-container {
-    width: 70%;
+    width: 100%;
+    padding: 15px;
+    margin-top:15px;
+    border-radius:4px;
     display: inline-block;
-    border: solid 1px #D3D3D3;
+    background-color: white;
 }
 .book-container:hover{
-    border: solid 1px black;
 }
 
     .book-container img {
@@ -122,44 +54,22 @@ body {
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
-/*.star-ratings {
-    unicode-bidi: bidi-override;
-    color: #c5c5c5;
-    font-size: 20px;
-    height: 20px;
-    width: 200px;
-    margin: 2px auto 10px 0px;
-    position: relative;
-    padding: 0;
-}
-   .star-ratings-top
-
-{
-    color: gold;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    left: 0px;
-    overflow: hidden;
-}
-
-.star-ratings-bottom {
-    z-index: 0;
-}*/  
-
 
 /*Modal*/
 .modal.left .modal-dialog,
 .modal.right .modal-dialog {
     position: fixed;
     margin: auto;
-    width: 60%;
+    width: 52%;
     height: 100%;
     -webkit-transform: translate3d(0%, 0, 0);
     -ms-transform: translate3d(0%, 0, 0);
     -o-transform: translate3d(0%, 0, 0);
     transform: translate3d(0%, 0, 0);
+}
+
+.add-book-modal{
+    width: 420px !important;
 }
 
 .modal.left .modal-content,
@@ -210,40 +120,6 @@ body {
     background-color: #FAFAFA;
 }
 
-/* ----- v CAN BE DELETED v ----- */
-.demo {
-    padding-top: 60px;
-    padding-bottom: 110px;
-}
-
-.btn-demo {
-    margin: 15px;
-    padding: 10px 15px;
-    border-radius: 0;
-    font-size: 16px;
-    background-color: #FFFFFF;
-}
-
-    .btn-demo:focus {
-        outline: 0;
-    }
-
-.demo-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: #212121;
-    text-align: center;
-}
-
-    .demo-footer > a {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 16px;
-        color: #fff;
-    }
-
 .column {
     float: left;
     padding: 10px;
@@ -252,6 +128,7 @@ body {
 
 .image-details {
     width: 35%;
+    text-align:center;
 }
 
 .description-details {
@@ -266,14 +143,21 @@ body {
 }
 
 .add-comment-button {
-    background-color: white;
-    color: black;
-    border: 2px solid #008080;
+    width: 112px;
+    border-radius: 9px;
+    border: 1px solid #e8d0939c;
+    background-color: #e8d0939c;
+    height: 29px;
     margin-bottom: 7px;
-    width: 200px;
 }
 
     .add-comment-button:hover {
-        background-color: #008B8B;
+        background-color: #cfb87c;
         color: white;
     }
+.new-comment {
+    width:100%;
+    box-sizing:border-box;
+    padding-top: 8px;
+    overflow:hidden;
+}
