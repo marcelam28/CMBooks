@@ -35,7 +35,6 @@ namespace CMBooks.Web.Controllers
         public PartialViewResult Filter(string genre)
         {
             return GetPage(1, genre);
-
         }
 
         public PartialViewResult GetPage(int pagNr, string genre)
