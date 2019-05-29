@@ -118,7 +118,8 @@ function addComment(commentId, userName) {
                     "</div>" +
                     "<p style='color:#707070;font-size:12px;padding-left: 7px; margin-top: 2px;'>" + response + "</p>";
                 $(id).append(divNou);
-                document.getElementById("no-comments").style.display = "none";
+                if (document.getElementById("no-comments")!=null) { document.getElementById("no-comments").style.display = "none"; }
+
                 EasyLoading.hide();
                 toastr.success("Comment added!");
             },

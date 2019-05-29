@@ -25,11 +25,12 @@ namespace CMBooks.Web.Controllers
         [HttpPost]
         public JsonResult DeleteComment(Guid commentId)
         {
-            var comment = CommentCore.Get(commentId);
-            comment.Status = EntityStatus.Deleted;
-            var result = CommentCore.Update(comment);
-
-            return Json("ok");
+            var result = CommentCore.Delete(commentId);
+            if (result.Success == true)
+            {
+                return Json("ok");
+            }
+            return Json("Not Ok");
         }
     }
 }

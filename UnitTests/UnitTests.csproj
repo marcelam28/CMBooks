@@ -49,6 +49,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RateTests.cs" />
+    <Compile Include="CommentTests.cs" />
+    <Compile Include="BookTests.cs" />
     <Compile Include="UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +83,10 @@
     <ProjectReference Include="..\Deventure.BusinessLogic\Deventure.BusinessLogic.csproj">
       <Project>{16B85C8D-AB4C-47A7-81B3-B16F0DA0DCA4}</Project>
       <Name>Deventure.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deventure.DataLayer\Deventure.DataLayer.EF.csproj">
+      <Project>{4228FC32-9A6F-48C5-9947-A118A93E144A}</Project>
+      <Name>Deventure.DataLayer.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

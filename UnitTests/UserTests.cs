@@ -24,7 +24,7 @@ namespace UnitTests
             Assert.AreEqual(true, createdUser.Success);
 
             var createdUserDb = UserCore.GetSingle(_user => _user.Email == user.Email);
-            Assert.AreEqual(true, createdUser != null);
+            Assert.AreEqual(true, createdUserDb != null);
             Assert.AreEqual(user.FirstName, createdUserDb.FirstName, "FirstName");
             Assert.AreEqual(user.LastName, createdUserDb.LastName, "LastName");
             Assert.AreEqual(user.Password, createdUserDb.Password, "Passwords");

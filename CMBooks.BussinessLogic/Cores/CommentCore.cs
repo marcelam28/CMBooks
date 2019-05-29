@@ -28,5 +28,19 @@ namespace CMBooks.BussinessLogic.Cores
             }
             return response;
         }
+
+        public static Response Delete(Guid commentId)
+        {
+            var response = false;
+            var comment = CommentCore.Get(commentId);
+            comment.Status = EntityStatus.Deleted;
+            var result = CommentCore.Update(comment);
+            if (result != null)
+            {
+                response = true;
+            }
+
+            return ResponseFactory.CreateResponse(response);
+        }
     }
 }
